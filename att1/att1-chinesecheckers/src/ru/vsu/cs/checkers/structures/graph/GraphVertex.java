@@ -1,4 +1,4 @@
-package ru.vsu.cs.checkers.structures;
+package ru.vsu.cs.checkers.structures.graph;
 
 public class GraphVertex<T> {
 
