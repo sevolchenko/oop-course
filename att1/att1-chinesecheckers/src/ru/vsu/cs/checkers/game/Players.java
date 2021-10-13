@@ -11,7 +11,7 @@ public enum Players {
 
     private final int sector;
 
-    private Players(int sector) {
+    Players(int sector) {
         this.sector = sector;
     }
 

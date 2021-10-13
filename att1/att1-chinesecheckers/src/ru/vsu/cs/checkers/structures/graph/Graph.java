@@ -1,5 +1,7 @@
 package ru.vsu.cs.checkers.structures.graph;
 
+import ru.vsu.cs.checkers.utils.GameUtils;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -40,15 +42,15 @@ public class Graph<T> {
     }
 
 
-    public void addAdge(int v1, int v2) {
+    public void addAdge(int v1, int direction, int v2) {
         int maxV = Math.max(v1, v2);
 
         for (; vCount <= maxV; vCount++) {
             vEdjLists.add(new GraphVertex<>(vCount, null));
         }
         if (!isAdj(v1, v2)) {
-            vEdjLists.get(v1).add(vEdjLists.get(v2));
-            vEdjLists.get(v2).add(vEdjLists.get(v2));
+            vEdjLists.get(v1).add(vEdjLists.get(v2), direction);
+            vEdjLists.get(v2).add(vEdjLists.get(v1), GameUtils.getOpposite(direction));
             eCount++;
         }
     }
@@ -60,6 +62,12 @@ public class Graph<T> {
             }
         }
         return false;
+    }
+
+    public T removeData(int v) {
+        T data = vEdjLists.get(v).getData();
+        vEdjLists.get(v).setData(null);
+        return data;
     }
 
     public GraphVertex<T> getVertex(int v) {
