@@ -4,10 +4,6 @@ import ru.vsu.cs.checkers.structures.graph.*;
 import ru.vsu.cs.checkers.utils.BoardUtils;
 import ru.vsu.cs.checkers.utils.GameUtils;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 public class Board {
 
     Graph<Checker> graph;
@@ -20,6 +16,8 @@ public class Board {
     private void initBoard() {
         BoardUtils.initSectors(graph);
         BoardUtils.connectSectors(graph);
+        BoardUtils.connectWithoutFormulas(graph);
+        BoardUtils.connectWithCenter(graph);
     }
 
     public void put(int place, Checker checker) {

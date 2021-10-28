@@ -101,8 +101,8 @@ public class BoardUtils {
 
     private static void connectRightDirected(Graph<Checker> graph, int sectorLeft, int sectorRight) { // Like /
         List<Integer> list = new ArrayList<>(List.of(0, 1, 3, 6));
-        int indexLeft = list.get(2);
-        int indexRight = list.get(0);
+        int indexLeft = 2;
+        int indexRight = 0;
 
         graph.addAdge(10 * sectorLeft + 6, 2, 10 * sectorRight);
         for (int i = 0; i < 3; i++) {
@@ -115,8 +115,8 @@ public class BoardUtils {
 
     private static void connectLeftDirected(Graph<Checker> graph, int sectorLeft, int sectorRight) { // Like \
         List<Integer> list = new ArrayList<>(List.of(0, 2, 5, 9));
-        int indexLeft = list.get(1);
-        int indexRight = list.get(3);
+        int indexLeft = 1;
+        int indexRight = 3;
 
         graph.addAdge(10 * sectorLeft, 1, 10 * sectorRight + 9);
         for (int i = 0; i < 3; i++) {

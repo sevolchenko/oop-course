@@ -14,23 +14,6 @@ public class Graph<T> {
     private int vCount = 0;
     private int eCount = 0;
 
-    private static Iterable<Integer> nullIterable = new Iterable<Integer>() {
-        @Override
-        public Iterator<Integer> iterator() {
-            return new Iterator<Integer>() {
-                @Override
-                public boolean hasNext() {
-                    return false;
-                }
-
-                @Override
-                public Integer next() {
-                    return null;
-                }
-            };
-        }
-    };
-
 
     public int vertexCount() {
         return vCount;
@@ -57,7 +40,7 @@ public class Graph<T> {
 
     public boolean isAdj(int v1, int v2) {
         for (GraphVertex<T> adj : getVertex(v1).adjacencies()) {
-            if (adj.equals(v2)) {
+            if (adj != null && adj.getNumber() == v2) {
                 return true;
             }
         }

@@ -28,6 +28,7 @@ public class GraphVertex<T> {
     }
 
     public Iterable<GraphVertex<T>> adjacencies() {
+
         return Arrays.asList(adjacencies);
     }
 

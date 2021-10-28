@@ -2,7 +2,7 @@ package ru.vsu.cs.checkers.game;
 
 public enum Players {
 
-    BLACK(0),
+    DARK(0),
     BLUE(1),
     RED(2),
     WHITE(3),

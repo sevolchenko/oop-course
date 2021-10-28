@@ -1,9 +1,8 @@
-package ru.vsu.cs.checkers.drawing;
+package ru.vsu.cs.checkers.display.javafx;
 
 import javafx.application.Application;
 import javafx.scene.*;
 import javafx.scene.canvas.*;
-import javafx.scene.shape.*;
 import javafx.stage.*;
 
 public class Graphics extends Application {

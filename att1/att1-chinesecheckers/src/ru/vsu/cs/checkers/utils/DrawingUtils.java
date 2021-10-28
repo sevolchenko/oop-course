@@ -1,15 +1,16 @@
 package ru.vsu.cs.checkers.utils;
 
 import javafx.scene.paint.Color;
-import ru.vsu.cs.checkers.game.Players;
 import ru.vsu.cs.checkers.piece.Checker;
+
+import java.util.Locale;
 
 public class DrawingUtils {
 
     public static Color getColor(Checker checker) {
         switch (checker.getOwner()) {
-            case BLACK -> {
-                return Color.BLACK;
+            case DARK -> {
+                return Color.BROWN;
             }
             case BLUE -> {
                 return Color.BLUE;
@@ -30,6 +31,13 @@ public class DrawingUtils {
                 return null;
             }
         }
+    }
+
+    public static char getChar(Checker checker) {
+        if (checker == null) {
+            return 'o';
+        }
+        return checker.getOwner().toString().toLowerCase(Locale.ROOT).charAt(0);
     }
 
 }
