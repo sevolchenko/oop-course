@@ -45,7 +45,7 @@ public class GameUtils {
                 throw new ChineseCheckersGameException("Wrong count of players. Expected 2, 3, 4, 6 but found " + countOfPlayers);
             }
         }
-        log.info("Players identified: " + currentlyPlaying.toString());
+        log.info("Players initialized: " + currentlyPlaying.toString());
     }
 
     public static List<Checker> initCheckersForGame(Queue<Players> currentlyPlaying) {

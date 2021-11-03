@@ -16,8 +16,8 @@ public class ChineseCheckersGame {
     private Queue<Players> currentlyPlaying;
     private Board board;
 
-    private boolean isJump;
-    private int lastMoved;
+    private boolean isJump = false;
+    private int lastMoved = -1;
     private Players winner;
 
     public ChineseCheckersGame() {
@@ -32,15 +32,21 @@ public class ChineseCheckersGame {
         log.info("Game started.");
     }
 
-    public void move(int from, int to) throws ChineseCheckersGameException, GraphException {
+    /*public void move1(int from, int to) throws ChineseCheckersGameException, GraphException {
         if (from < 0 || to < 0 || from > 120 || to > 120) {
             throw new ChineseCheckersGameException("Invalid indices of cells: " + from + ", " + to);
         }
         Checker checker = board.getChecker(from);
-        if (checker == null || checker.getOwner() != getWhoseMoving()) {
-            log.info("Move is not possible. Place " + from + " is empty or checker's owner is not " + getWhoseMoving());
+
+        if (checker == null) {
+            log.info("Move is not possible. Place " + from + " is empty.");
             return;
         }
+        if (checker.getOwner() != getWhoseMoving()) {
+            log.info("Move is not possible. Checker's owner is not \" + getWhoseMoving()");
+            return;
+        }
+
         if (!isJump && board.isConnected(from, to) && board.getChecker(to) == null) {
             board.clear(from);
             board.put(to, checker);
@@ -56,20 +62,69 @@ public class ChineseCheckersGame {
             }
             log.info("Move is not possible. Checker " + from + " is not jumped at last move");
         }
+
+        if (!board.isConnected(from, to)) {
+            log.info("Indices " + from + " and " + to + " is not connected");
+        }
+        winner = GameUtils.checkWinner(board, currentlyPlaying);
+        if (winner != null) {
+            log.info("Winner founded: " + winner);
+        }
+    }
+*/
+    public void move (int from, int to) throws ChineseCheckersGameException, GraphException {
+        if (from < 0 || to < 0 || from > 120 || to > 120) {
+            throw new ChineseCheckersGameException("Invalid indices of cells: " + from + ", " + to);
+        }
+
+        Checker checker = board.getChecker(from);
+
+        if (checker == null) {
+            log.info("Move is not possible. Place " + from + " is empty.");
+            return;
+        }
+        if (checker.getOwner() != getWhoseMoving()) {
+            log.info("Move is not possible. Checker's owner is not " + getWhoseMoving());
+            return;
+        }
+
+        boolean connected = board.isConnected(from, to);
+        boolean acrossOne = board.isConnectedAcrossOne(from, to);
+
+        if ((!isJump && connected) || ((!isJump || (isJump && from == lastMoved)) && acrossOne)) {
+            board.clear(from);
+            board.put(to, checker);
+            lastMoved = to;
+            log.info(getWhoseMoving() + "'s checker " + from + " successfully moved at position " + to);
+            if (connected) {
+                currentlyPlaying.offer(currentlyPlaying.poll());
+                isJump = false;
+            } else if (acrossOne){
+                isJump = true;
+            }
+        } else {
+            log.info("Move from " + from + " to " + to + " is not possible.");
+        }
+
+        checkWinner();
+
+    }
+
+    private void checkWinner() {
         winner = GameUtils.checkWinner(board, currentlyPlaying);
         if (winner != null) {
             log.info("Winner founded: " + winner);
         }
     }
 
-    public void skipMove() {
-        log.info("Player " + getWhoseMoving() + " skipped his move");
-        currentlyPlaying.offer(currentlyPlaying.poll());
-        isJump = false;
-    }
-
-    public Queue<Players> getCurrentlyPlaying() {
-        return currentlyPlaying;
+    public void continueAfterJump() {
+        if (isJump) {
+            log.info("Player " + getWhoseMoving() + " ended jumps");
+            currentlyPlaying.offer(currentlyPlaying.poll());
+            isJump = false;
+        } else  {
+            log.info("Player " + getWhoseMoving() + " can't continue");
+        }
     }
 
     public Players getWhoseMoving() {

@@ -39,15 +39,15 @@ public class ConsoleInterface {
 
     private void parseBeginInput(String message) throws FileNotFoundException, ChineseCheckersGameException, GraphException, InterruptedException {
         switch (message) {
+            case "game" : {
+                cp = new ConsoleCommandProvider();
+                startGame();
+                break;
+            }
             case "simulation" : {
                 System.out.println("Type full path of source file");
                 String path = sc.nextLine();
                 cp = new ScriptedCommandProvider(new File(path));
-                startGame();
-                break;
-            }
-            case "game" : {
-                cp = new ConsoleCommandProvider();
                 startGame();
                 break;
             }
@@ -93,15 +93,14 @@ public class ConsoleInterface {
                         System.out.println("Type any symbols to console for continue");
                         sc.nextLine();
                         begin();
-                        break;
+                        return;
                     }
                     printField();
                     printWhoseMoving();
                     break;
                 }
-                case "skip" : {
-                    RequestSkipMove rsm = new RequestSkipMove();
-                    rp.processSkipMove(rsm);
+                case "continue" : {
+                    rp.processContinue();
                     printWhoseMoving();
                     break;
                 }
@@ -116,7 +115,7 @@ public class ConsoleInterface {
                 case "help" : {
                     System.out.println("Available commands:");
                     System.out.println("    move *int* *int* - move your checker from first position to second");
-                    System.out.println("    skip - skip your move (or end your jumping)");
+                    System.out.println("    continue - end jumping");
                     System.out.println("    restart - restart game");
                     System.out.println("    end - go to main menu");
                     break;
@@ -216,7 +215,8 @@ public class ConsoleInterface {
         rows[10].append("    |  ");
         rows[10].append(sectors[10][3].reverse());
         rows[10].append(" ");
-        rows[10].append(DrawingUtils.getChar(rp.getCheckerAt(120)));
+        RequestChecker rc = new RequestChecker(120);
+        rows[10].append(DrawingUtils.getChar(rp.getCheckerAt(rc)));
         rows[10].append(" ");
         rows[10].append(sectors[7][3]);
         rows[10].append("  |");
@@ -302,7 +302,8 @@ public class ConsoleInterface {
         for (int i = 0; i < 4; i++) {
             str[i] = new StringBuilder();
             for (int j = 0; j <= i; j++) {
-                Checker checker = rp.getCheckerAt(sector * 10 + index);
+                RequestChecker rc = new RequestChecker(sector * 10 + index);
+                Checker checker = rp.getCheckerAt(rc);
                 if (j > 0) {
                     str[i].append(" ");
                 }

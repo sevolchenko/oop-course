@@ -1,0 +1,12 @@
+02.11.2021 10:30:04.826 INFO   r.v.cs.checkers.Main - Application started.
+02.11.2021 10:30:04.891 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+02.11.2021 10:30:10.502 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+02.11.2021 10:30:15.035 INFO   r.v.c.c.u.GameUtils - Players initialized: [DARK, RED, GREEN]
+02.11.2021 10:30:15.036 INFO   r.v.c.c.u.GameUtils - Checkers for this players are ready.
+02.11.2021 10:30:15.037 INFO   r.v.c.c.u.GameUtils - Checkers staying on their places.
+02.11.2021 10:30:15.037 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+02.11.2021 10:30:50.462 INFO   r.v.c.c.g.ChineseCheckersGame - DARK's checker 4 successfully moved at position 69
+02.11.2021 10:30:50.463 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+02.11.2021 10:31:29.086 INFO   r.v.c.c.g.ChineseCheckersGame - Player DARK ended jumps
+02.11.2021 10:32:16.683 INFO   r.v.c.c.g.ChineseCheckersGame - Move from 20 to 86 is not possible.
+02.11.2021 10:32:16.683 INFO   r.v.c.c.u.GameUtils - Checking for winner...

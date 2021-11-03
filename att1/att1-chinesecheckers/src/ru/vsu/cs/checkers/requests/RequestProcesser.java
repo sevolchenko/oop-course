@@ -22,16 +22,16 @@ public class RequestProcesser {
         game.move(rm.getFrom(), rm.getTo());
     }
 
-    public void processSkipMove(RequestSkipMove rsm) {
-        game.skipMove();
+    public void processContinue() {
+        game.continueAfterJump();
     }
 
     public Players getWhoseMoving() {
         return game.getWhoseMoving();
     }
 
-    public Checker getCheckerAt(int place) {
-        return game.getCheckerAt(place);
+    public Checker getCheckerAt(RequestChecker rc) {
+        return game.getCheckerAt(rc.getPlace());
     }
 
     public Players getWinner() {

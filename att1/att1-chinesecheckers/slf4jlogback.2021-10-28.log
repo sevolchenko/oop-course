@@ -1,0 +1,165 @@
+28.10.2021 15:12:13.504 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 15:13:02.626 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 15:13:29.157 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 15:14:12.434 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 15:14:23.486 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 15:14:56.965 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 15:15:02.952 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 15:15:42.763 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 15:24:09.280 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 15:25:26.653 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 15:28:31.561 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 15:34:04.149 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 15:34:07.945 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 15:34:21.956 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 15:39:49.727 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 15:39:49.743 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 15:39:55.979 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 15:39:59.085 INFO   r.v.c.c.u.GameUtils - Players identified: [DARK, WHITE]
+28.10.2021 15:39:59.101 INFO   r.v.c.c.u.GameUtils - Checkers for this players are ready.
+28.10.2021 15:39:59.101 INFO   r.v.c.c.u.GameUtils - Checkers staying on their places.
+28.10.2021 15:39:59.101 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+28.10.2021 15:39:59.101 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 15:39:59.101 INFO   r.v.c.c.r.Request - Request.getCheckerAt(0) called.
+28.10.2021 15:40:50.058 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 15:40:50.105 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 15:40:53.214 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 15:40:57.511 INFO   r.v.c.c.u.GameUtils - Players identified: [DARK, WHITE]
+28.10.2021 15:40:57.511 INFO   r.v.c.c.u.GameUtils - Checkers for this players are ready.
+28.10.2021 15:40:57.511 INFO   r.v.c.c.u.GameUtils - Checkers staying on their places.
+28.10.2021 15:40:57.511 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+28.10.2021 15:40:57.511 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 15:40:57.511 INFO   r.v.c.c.r.Request - Request.getCheckerAt(0) called.
+28.10.2021 15:45:16.989 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 15:45:17.005 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 15:45:20.944 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 15:45:23.304 INFO   r.v.c.c.u.GameUtils - Players identified: [DARK, WHITE]
+28.10.2021 15:45:23.304 INFO   r.v.c.c.u.GameUtils - Checkers for this players are ready.
+28.10.2021 15:45:23.304 INFO   r.v.c.c.u.GameUtils - Checkers staying on their places.
+28.10.2021 15:45:23.304 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+28.10.2021 15:48:16.594 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 15:48:16.625 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 15:48:50.141 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 15:48:56.904 INFO   r.v.c.c.u.GameUtils - Players identified: [DARK, WHITE]
+28.10.2021 15:48:56.904 INFO   r.v.c.c.u.GameUtils - Checkers for this players are ready.
+28.10.2021 15:48:56.904 INFO   r.v.c.c.u.GameUtils - Checkers staying on their places.
+28.10.2021 15:48:56.904 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+28.10.2021 15:49:26.838 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 15:49:26.885 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 15:49:30.101 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 15:49:33.327 INFO   r.v.c.c.u.GameUtils - Players identified: [DARK, WHITE]
+28.10.2021 15:49:33.327 INFO   r.v.c.c.u.GameUtils - Checkers for this players are ready.
+28.10.2021 15:49:33.343 INFO   r.v.c.c.u.GameUtils - Checkers staying on their places.
+28.10.2021 15:49:33.343 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+28.10.2021 15:50:37.063 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 15:50:37.094 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 15:50:39.854 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 15:50:46.832 INFO   r.v.c.c.u.GameUtils - Players identified: [DARK, WHITE]
+28.10.2021 15:50:46.832 INFO   r.v.c.c.u.GameUtils - Checkers for this players are ready.
+28.10.2021 15:50:46.832 INFO   r.v.c.c.u.GameUtils - Checkers staying on their places.
+28.10.2021 15:50:46.832 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+28.10.2021 15:57:16.653 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 15:57:16.669 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 15:57:19.387 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 15:57:23.105 INFO   r.v.c.c.u.GameUtils - Players identified: [DARK, WHITE]
+28.10.2021 15:57:23.105 INFO   r.v.c.c.u.GameUtils - Checkers for this players are ready.
+28.10.2021 15:57:23.105 INFO   r.v.c.c.u.GameUtils - Checkers staying on their places.
+28.10.2021 15:57:23.105 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+28.10.2021 15:58:27.734 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 15:58:27.749 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 15:58:32.011 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 15:58:33.885 INFO   r.v.c.c.u.GameUtils - Players identified: [DARK, WHITE]
+28.10.2021 15:58:33.885 INFO   r.v.c.c.u.GameUtils - Checkers for this players are ready.
+28.10.2021 15:58:33.885 INFO   r.v.c.c.u.GameUtils - Checkers staying on their places.
+28.10.2021 15:58:33.885 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+28.10.2021 15:58:46.934 INFO   r.v.c.c.g.ChineseCheckersGame - DARK's checker 4 successfully jumped at position 69
+28.10.2021 15:58:46.934 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+28.10.2021 16:02:43.871 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 16:02:43.886 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 16:02:50.590 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 16:02:52.527 INFO   r.v.c.c.u.GameUtils - Players identified: [DARK, WHITE]
+28.10.2021 16:02:52.527 INFO   r.v.c.c.u.GameUtils - Checkers for this players are ready.
+28.10.2021 16:02:52.527 INFO   r.v.c.c.u.GameUtils - Checkers staying on their places.
+28.10.2021 16:02:52.527 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+28.10.2021 16:03:04.410 INFO   r.v.c.c.g.ChineseCheckersGame - DARK's checker 4 successfully jumped at position 69
+28.10.2021 16:03:04.410 INFO   r.v.c.c.g.ChineseCheckersGame - Move is not possible. Checker 4 is not jumped at last move
+28.10.2021 16:03:04.410 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+28.10.2021 16:03:52.043 INFO   r.v.c.c.g.ChineseCheckersGame - Move is not possible. Checker 5 is not jumped at last move
+28.10.2021 16:03:52.043 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+28.10.2021 16:04:15.182 INFO   r.v.c.c.g.ChineseCheckersGame - DARK's checker 69 successfully jumped at position 4
+28.10.2021 16:04:15.182 INFO   r.v.c.c.g.ChineseCheckersGame - Move is not possible. Checker 69 is not jumped at last move
+28.10.2021 16:04:15.182 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+28.10.2021 16:04:24.167 INFO   r.v.c.c.g.ChineseCheckersGame - DARK's checker 4 successfully jumped at position 69
+28.10.2021 16:04:24.167 INFO   r.v.c.c.g.ChineseCheckersGame - Move is not possible. Checker 4 is not jumped at last move
+28.10.2021 16:04:24.167 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+28.10.2021 16:05:45.251 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 16:05:45.283 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 16:05:52.464 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 16:05:54.356 INFO   r.v.c.c.u.GameUtils - Players identified: [DARK, WHITE]
+28.10.2021 16:05:54.356 INFO   r.v.c.c.u.GameUtils - Checkers for this players are ready.
+28.10.2021 16:05:54.356 INFO   r.v.c.c.u.GameUtils - Checkers staying on their places.
+28.10.2021 16:05:54.356 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+28.10.2021 16:05:59.807 INFO   r.v.c.c.g.ChineseCheckersGame - Player DARK skipped his move
+28.10.2021 16:06:02.747 INFO   r.v.c.c.g.ChineseCheckersGame - Player WHITE skipped his move
+28.10.2021 16:07:38.922 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 16:07:38.969 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 16:07:41.868 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 16:07:44.483 INFO   r.v.c.c.u.GameUtils - Players identified: [DARK, RED, GREEN]
+28.10.2021 16:07:44.483 INFO   r.v.c.c.u.GameUtils - Checkers for this players are ready.
+28.10.2021 16:07:44.483 INFO   r.v.c.c.u.GameUtils - Checkers staying on their places.
+28.10.2021 16:07:44.483 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+28.10.2021 16:07:50.498 INFO   r.v.c.c.g.ChineseCheckersGame - DARK's checker 4 successfully jumped at position 69
+28.10.2021 16:07:50.498 INFO   r.v.c.c.g.ChineseCheckersGame - Move is not possible. Checker 4 is not jumped at last move
+28.10.2021 16:07:50.498 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+28.10.2021 16:16:51.456 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 16:16:51.472 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 16:17:01.361 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 16:17:09.310 INFO   r.v.c.c.u.GameUtils - Players identified: [DARK, WHITE]
+28.10.2021 16:17:09.310 INFO   r.v.c.c.u.GameUtils - Checkers for this players are ready.
+28.10.2021 16:17:09.310 INFO   r.v.c.c.u.GameUtils - Checkers staying on their places.
+28.10.2021 16:17:09.310 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+28.10.2021 16:17:34.829 INFO   r.v.c.c.g.ChineseCheckersGame - DARK's checker 4 successfully jumped at position 69
+28.10.2021 16:17:34.829 INFO   r.v.c.c.g.ChineseCheckersGame - Move is not possible. Checker 4 is not jumped at last move
+28.10.2021 16:17:34.829 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+28.10.2021 16:17:51.412 INFO   r.v.c.c.g.ChineseCheckersGame - Player DARK skipped his move
+28.10.2021 16:19:21.322 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 16:19:21.385 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 16:19:23.697 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 16:19:26.160 INFO   r.v.c.c.u.GameUtils - Players identified: [DARK, WHITE]
+28.10.2021 16:19:26.160 INFO   r.v.c.c.u.GameUtils - Checkers for this players are ready.
+28.10.2021 16:19:26.160 INFO   r.v.c.c.u.GameUtils - Checkers staying on their places.
+28.10.2021 16:19:26.160 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+28.10.2021 16:19:28.160 INFO   r.v.c.c.g.ChineseCheckersGame - Player DARK skipped his move
+28.10.2021 16:19:34.560 INFO   r.v.c.c.g.ChineseCheckersGame - Move is not possible. Place 4 is empty or checker's owner is not WHITE
+28.10.2021 16:19:35.908 INFO   r.v.c.c.g.ChineseCheckersGame - Player WHITE skipped his move
+28.10.2021 16:20:17.472 INFO   r.v.c.c.g.ChineseCheckersGame - DARK's checker 4 successfully jumped at position 69
+28.10.2021 16:20:17.472 INFO   r.v.c.c.g.ChineseCheckersGame - Move is not possible. Checker 4 is not jumped at last move
+28.10.2021 16:20:17.472 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+28.10.2021 16:20:21.337 INFO   r.v.c.c.g.ChineseCheckersGame - Player DARK skipped his move
+28.10.2021 16:20:51.541 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+28.10.2021 16:21:39.297 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+28.10.2021 16:21:44.839 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+28.10.2021 16:22:36.791 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+28.10.2021 16:22:41.796 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+28.10.2021 16:23:45.054 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 16:23:45.101 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 16:23:47.952 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 16:24:05.149 INFO   r.v.c.c.u.GameUtils - Players identified: [DARK, WHITE]
+28.10.2021 16:24:05.149 INFO   r.v.c.c.u.GameUtils - Checkers for this players are ready.
+28.10.2021 16:24:05.149 INFO   r.v.c.c.u.GameUtils - Checkers staying on their places.
+28.10.2021 16:24:05.149 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+28.10.2021 16:24:23.627 INFO   r.v.c.c.g.ChineseCheckersGame - Player DARK skipped his move
+28.10.2021 16:25:16.690 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+28.10.2021 16:26:25.598 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+28.10.2021 16:26:38.274 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+28.10.2021 16:27:55.984 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+28.10.2021 16:28:51.616 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+28.10.2021 16:29:17.890 INFO   r.v.cs.checkers.Main - Application started.
+28.10.2021 16:29:18.119 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 16:29:25.043 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+28.10.2021 16:29:26.987 INFO   r.v.c.c.u.GameUtils - Players identified: [DARK, WHITE]
+28.10.2021 16:29:26.987 INFO   r.v.c.c.u.GameUtils - Checkers for this players are ready.
+28.10.2021 16:29:26.987 INFO   r.v.c.c.u.GameUtils - Checkers staying on their places.
+28.10.2021 16:29:26.987 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+28.10.2021 16:29:54.191 INFO   r.v.c.c.g.ChineseCheckersGame - WHITE's checker 7 successfully moved at position 68
+28.10.2021 16:29:54.191 INFO   r.v.c.c.u.GameUtils - Checking for winner...

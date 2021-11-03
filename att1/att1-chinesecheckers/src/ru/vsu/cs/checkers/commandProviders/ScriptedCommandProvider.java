@@ -8,7 +8,6 @@ public class ScriptedCommandProvider implements CommandProvider{
 
     Scanner sc;
 
-
     public ScriptedCommandProvider(File file) throws FileNotFoundException {
         sc = new Scanner(file);
     }
@@ -17,9 +16,4 @@ public class ScriptedCommandProvider implements CommandProvider{
     public String getNextLine() {
         return sc.nextLine();
     }
-
-    @Override
-    public void stop() {
-    }
-
 }

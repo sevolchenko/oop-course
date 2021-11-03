@@ -33,7 +33,7 @@ public class Board {
     }
 
     public boolean isConnected(int place1, int place2) {
-        return graph.isAdj(place1, place2);
+        return graph.isAdj(place1, place2) && graph.getVertex(place2).getData() == null;
     }
 
     public boolean isConnectedAcrossOne(int place1, int place2) throws GraphException {

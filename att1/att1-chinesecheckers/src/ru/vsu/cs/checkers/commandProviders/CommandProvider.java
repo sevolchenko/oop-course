@@ -4,6 +4,4 @@ public interface CommandProvider {
 
     String getNextLine();
 
-    void stop();
-
 }
