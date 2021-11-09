@@ -1,2 +1,32 @@
-05.11.2021 01:01:48.708 INFO   r.v.cs.checkers.Main - Application started.
-05.11.2021 01:01:48.794 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+09.11.2021 01:57:21.575 INFO   r.v.cs.checkers.Main - Application started.
+09.11.2021 01:57:21.606 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+09.11.2021 01:57:31.193 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+09.11.2021 01:57:34.490 INFO   r.v.c.c.u.GameUtils - Players initialized: [DARK, BLUE, WHITE, GREEN]
+09.11.2021 01:57:34.490 INFO   r.v.c.c.u.GameUtils - Checkers for this players are ready.
+09.11.2021 01:57:34.490 INFO   r.v.c.c.u.GameUtils - Checkers staying on their places.
+09.11.2021 01:57:34.490 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+09.11.2021 11:01:21.825 INFO   r.v.cs.checkers.Main - Application started.
+09.11.2021 11:01:21.883 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+09.11.2021 11:01:24.847 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+09.11.2021 11:01:27.453 INFO   r.v.c.c.u.GameUtils - Players initialized: [DARK, BLUE, WHITE, GREEN]
+09.11.2021 11:01:27.455 INFO   r.v.c.c.u.GameUtils - Checkers for this players are ready.
+09.11.2021 11:01:27.457 INFO   r.v.c.c.u.GameUtils - Checkers staying on their places.
+09.11.2021 11:01:27.458 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+09.11.2021 11:01:39.081 INFO   r.v.c.c.g.ChineseCheckersGame - DARK's checker 4 successfully moved at position 69
+09.11.2021 11:01:39.083 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+09.11.2021 11:01:43.399 INFO   r.v.c.c.g.ChineseCheckersGame - Player DARK ended jumps
+09.11.2021 19:31:53.901 INFO   r.v.cs.checkers.Main - Application started.
+09.11.2021 19:31:53.916 INFO   r.v.c.c.s.GraphBuilder - Build of graph is done.
+09.11.2021 19:31:53.916 INFO   r.v.c.c.piece.Board - Board done.
+09.11.2021 19:31:53.916 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+09.11.2021 19:32:56.359 INFO   r.v.c.c.s.GraphBuilder - Build of graph is done.
+09.11.2021 19:32:56.359 INFO   r.v.c.c.piece.Board - Board done.
+09.11.2021 19:32:56.359 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+09.11.2021 19:32:59.952 INFO   r.v.c.c.s.GameBuilder - Players initialized: [DARK, WHITE]
+09.11.2021 19:32:59.952 INFO   r.v.c.c.s.GameBuilder - Checkers staying on their places
+09.11.2021 19:32:59.968 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+09.11.2021 19:33:08.235 INFO   r.v.c.c.d.c.ConsoleInterface - README file opened
+09.11.2021 19:33:24.802 INFO   r.v.c.c.g.ChineseCheckersGame - DARK's checker 4 successfully moved at position 69
+09.11.2021 19:33:28.390 INFO   r.v.c.c.g.ChineseCheckersGame - Player DARK ended jumps
+09.11.2021 19:33:48.119 INFO   r.v.c.c.g.ChineseCheckersGame - WHITE's checker 34 successfully moved at position 99
+09.11.2021 19:33:54.788 INFO   r.v.c.c.g.ChineseCheckersGame - Player WHITE ended jumps

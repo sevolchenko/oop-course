@@ -4,154 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a1a4b68-034a-460a-911a-53fd29e2c5e3" name="Changes" comment="1.0 (att2 copied)">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_12_ea_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_12_ea_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_12_ea_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_12_ea_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_12_ea_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_12_ea_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_32.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/openjfx_javafx_controls.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/slf4j_ext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/commandProviders/scripts/script1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../att1/att1-chinesecheckers/ChineseCheckers.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../att1/att1-chinesecheckers/ChineseCheckers.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../att1/att1-chinesecheckers/out/production/att1-chinesecheckers/ru/vsu/cs/checkers/game/Players.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="3a1a4b68-034a-460a-911a-53fd29e2c5e3" name="Changes" comment="1.1 (att2 copied)">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_32.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/slf4j_ext.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChineseCheckers.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/att2-chinesecheckers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/att2-chinesecheckers.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-console-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-console-l1-2-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-datetime-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-debug-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-errorhandling-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-file-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-file-l1-2-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-file-l2-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-handle-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-heap-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-interlocked-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-libraryloader-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-localization-l1-2-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-memory-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-namedpipe-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-processenvironment-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-processthreads-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-processthreads-l1-1-1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-profile-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-rtlsupport-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-string-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-synch-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-synch-l1-2-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-sysinfo-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-timezone-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-core-util-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-crt-conio-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-crt-convert-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-crt-environment-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-crt-filesystem-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-crt-heap-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-crt-locale-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-crt-math-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-crt-multibyte-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-crt-private-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-crt-process-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-crt-runtime-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-crt-stdio-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-crt-string-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-crt-time-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/api-ms-win-crt-utility-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/decora_sse.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/fxplugins.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/glass.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/glib-lite.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/gstreamer-lite.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/javafx_font.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/javafx_iio.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/jfxmedia.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/jfxwebkit.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/msvcp140.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/prism_common.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/prism_d3d.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/prism_sw.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/ucrtbase.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/vcruntime140.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/bin/vcruntime140_1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.base/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.base/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.base/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.controls/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.controls/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.controls/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.fxml/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.fxml/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.fxml/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.graphics/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.graphics/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.graphics/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.graphics/jpeg_fx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.graphics/mesa3d.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.media/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.media/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.media/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.media/directshow.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.media/glib.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.media/gstreamer.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.media/libffi.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.swing/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.swing/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.swing/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.web/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.web/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.web/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.web/icu_web.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.web/libxml2.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.web/libxslt.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/legal/javafx.web/webkit.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/lib/javafx-swt.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/lib/javafx.base.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/lib/javafx.controls.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/lib/javafx.fxml.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/lib/javafx.graphics.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/lib/javafx.media.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/lib/javafx.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/lib/javafx.swing.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/lib/javafx.web.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-sdk-17.0.0.1/src.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/logback/jcl-over-slf4j-1.7.25.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/logback/log4j-over-slf4j-2.0.0-alpha5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/logback/logback-classic-1.3.0-alpha10.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/logback/logback-core-1.3.0-alpha10.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/logback/slf4j-api-2.0.0-alpha4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/att2-chinesecheckers/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/att2-chinesecheckers/resources/logback.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/commandProviders/CommandProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/commandProviders/CommandProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/commandProviders/ConsoleCommandProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/commandProviders/ConsoleCommandProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/commandProviders/ScriptedCommandProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/commandProviders/ScriptedCommandProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/commandProviders/scripts/script1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/att2-chinesecheckers/ru/vsu/cs/checkers/commandProviders/scripts/script1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/display/console/ConsoleInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/display/console/ConsoleInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/display/javafx/Graphics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/display/javafx/Graphics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/game/ChineseCheckersGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/game/ChineseCheckersGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/game/ChineseCheckersGameException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/game/ChineseCheckersGameException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/game/Players.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/game/Players.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/piece/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/piece/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/piece/Checker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/piece/Checker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/requests/RequestChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/requests/RequestChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/requests/RequestMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/requests/RequestMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/requests/RequestProcesser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/requests/RequestProcesser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/requests/RequestStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/requests/RequestStart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/structures/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/structures/graph/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/structures/graph/GraphException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/structures/graph/GraphException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/structures/graph/GraphVertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/structures/graph/GraphVertex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/utils/ArrayUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/utils/ArrayUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/utils/BoardUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/utils/BoardUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/utils/DrawingUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/utils/DrawingUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/checkers/utils/GameUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/utils/GameUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/vsu/cs/volcheko_s_a/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slf4jlogback.log" beforeDir="false" afterPath="$PROJECT_DIR$/slf4jlogback.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/commandProviders/ConsoleCommandProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/commandProviders/ConsoleCommandProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/commandProviders/ScriptedCommandProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/commandProviders/ScriptedCommandProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/display/console/ConsoleInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/display/console/ConsoleInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/game/ChineseCheckersGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/game/ChineseCheckersGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/game/ChineseCheckersGameException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/piece/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/piece/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/requests/RequestProcesser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/structures/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/structures/graph/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/structures/graph/GraphVertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/structures/graph/GraphVertex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/utils/BoardUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/utils/GameUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/utils/GameUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +115,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
@@ -250,6 +124,14 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\loide\OneDrive\Документы\git\OOP-course\att2\att2-chinesecheckers\src\main\resources" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\loide\OneDrive\Документы\git\OOP-course\att2\att2-chinesecheckers\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn -ff" />
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -290,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636015488089</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1.0 (att2 copied)">
+      <created>1636409665720</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1636409665720</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -308,7 +197,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1.0 (att2)" />
     <MESSAGE value="1.0 (att2 copied)" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.0 (att2 copied)" />
+    <MESSAGE value="1.1 (att2 copied)" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.1 (att2 copied)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

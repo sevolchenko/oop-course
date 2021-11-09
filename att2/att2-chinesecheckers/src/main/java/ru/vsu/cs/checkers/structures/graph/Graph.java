@@ -3,8 +3,6 @@ package ru.vsu.cs.checkers.structures.graph;
 import ru.vsu.cs.checkers.utils.GameUtils;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 
 
@@ -33,7 +31,7 @@ public class Graph<T> {
         }
         if (!isAdj(v1, v2)) {
             vEdjLists.get(v1).add(vEdjLists.get(v2), direction);
-            vEdjLists.get(v2).add(vEdjLists.get(v1), GameUtils.getOpposite(direction));
+            vEdjLists.get(v2).add(vEdjLists.get(v1), GameUtils.getOppositeDirection(direction));
             eCount++;
         }
     }

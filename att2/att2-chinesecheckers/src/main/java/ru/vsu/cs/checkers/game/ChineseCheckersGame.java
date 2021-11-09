@@ -3,78 +3,46 @@ package ru.vsu.cs.checkers.game;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.vsu.cs.checkers.piece.*;
-import ru.vsu.cs.checkers.structures.graph.GraphException;
-import ru.vsu.cs.checkers.utils.GameUtils;
+import ru.vsu.cs.checkers.service.GameBuilder;
+import ru.vsu.cs.checkers.service.WinnerChecker;
 
 import java.util.ArrayDeque;
+import java.util.List;
 import java.util.Queue;
 
 public class ChineseCheckersGame {
 
     private static final Logger log = LoggerFactory.getLogger(ChineseCheckersGame.class);
 
+    private GameState gameState;
     private Queue<Players> currentlyPlaying;
     private Board board;
 
     private boolean isJump = false;
     private int lastMoved = -1;
-    private Players winner;
+    private WinnerChecker wc;
 
     public ChineseCheckersGame() {
         currentlyPlaying = new ArrayDeque<>();
         board = new Board();
+        gameState = GameState.INITIALIZED;
         log.info("Game initialized.");
     }
 
-    public void startGame(int countOfPlayers) throws ChineseCheckersGameException {
-        GameUtils.fillPlayers(countOfPlayers, currentlyPlaying);
-        GameUtils.putCheckersOnTheirPlaces(board, GameUtils.initCheckersForGame(currentlyPlaying));
+    public void startGame(int countOfPlayers) {
+        GameBuilder gb = new GameBuilder(currentlyPlaying, board, countOfPlayers);
+        gb.build();
+        wc = new WinnerChecker(board, currentlyPlaying);
+        gameState = GameState.PLAYING;
         log.info("Game started.");
+
     }
 
-    /*public void move1(int from, int to) throws ChineseCheckersGameException, GraphException {
+
+    public void move (int from, int to) {
         if (from < 0 || to < 0 || from > 120 || to > 120) {
-            throw new ChineseCheckersGameException("Invalid indices of cells: " + from + ", " + to);
-        }
-        Checker checker = board.getChecker(from);
-
-        if (checker == null) {
-            log.info("Move is not possible. Place " + from + " is empty.");
+            log.error("Invalid indices of cells: " + from + ", " + to);
             return;
-        }
-        if (checker.getOwner() != getWhoseMoving()) {
-            log.info("Move is not possible. Checker's owner is not \" + getWhoseMoving()");
-            return;
-        }
-
-        if (!isJump && board.isConnected(from, to) && board.getChecker(to) == null) {
-            board.clear(from);
-            board.put(to, checker);
-            currentlyPlaying.offer(currentlyPlaying.poll());
-            log.info(getWhoseMoving() + "'s checker " + from + " successfully moved at position " + to);
-        } else if (board.isConnectedAcrossOne(from, to)) {
-            if ((!isJump || lastMoved == from)) {
-                board.clear(from);
-                board.put(to, checker);
-                isJump = true;
-                lastMoved = to;
-                log.info(getWhoseMoving() + "'s checker " + from + " successfully jumped at position " + to);
-            }
-            log.info("Move is not possible. Checker " + from + " is not jumped at last move");
-        }
-
-        if (!board.isConnected(from, to)) {
-            log.info("Indices " + from + " and " + to + " is not connected");
-        }
-        winner = GameUtils.checkWinner(board, currentlyPlaying);
-        if (winner != null) {
-            log.info("Winner founded: " + winner);
-        }
-    }
-*/
-    public void move (int from, int to) throws ChineseCheckersGameException, GraphException {
-        if (from < 0 || to < 0 || from > 120 || to > 120) {
-            throw new ChineseCheckersGameException("Invalid indices of cells: " + from + ", " + to);
         }
 
         Checker checker = board.getChecker(from);
@@ -106,14 +74,24 @@ public class ChineseCheckersGame {
             log.info("Move from " + from + " to " + to + " is not possible.");
         }
 
-        checkWinner();
-
+        if (getWhoseMoving() == Players.DARK && !isJump) {
+            checkWinner();
+        }
     }
 
     private void checkWinner() {
-        winner = GameUtils.checkWinner(board, currentlyPlaying);
-        if (winner != null) {
-            log.info("Winner founded: " + winner);
+        List<Players> winners = wc.check();
+        if (winners.size() == 0) {
+            log.info("Winner not founded.");
+        } else {
+            if (winners.size() == 1) {
+                Players winner = winners.get(0);
+                log.info("Winner founded: " + winner);
+            }
+            if (winners.size() > 1) {
+                log.info("A lot of winners founded.");
+            }
+            gameState = GameState.WINNER_EXIST;
         }
     }
 
@@ -127,12 +105,16 @@ public class ChineseCheckersGame {
         }
     }
 
+    public GameState getGameState() {
+        return gameState;
+    }
+
     public Players getWhoseMoving() {
         return currentlyPlaying.peek();
     }
 
-    public Players getWinner() {
-        return winner;
+    public List<Players> getWinner() {
+        return wc.check();
     }
 
     public Checker getCheckerAt(int place) {

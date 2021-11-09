@@ -1,24 +1,25 @@
 package ru.vsu.cs.checkers.requests;
 
 import ru.vsu.cs.checkers.game.ChineseCheckersGame;
-import ru.vsu.cs.checkers.game.ChineseCheckersGameException;
+import ru.vsu.cs.checkers.game.GameState;
 import ru.vsu.cs.checkers.game.Players;
 import ru.vsu.cs.checkers.piece.Checker;
-import ru.vsu.cs.checkers.structures.graph.GraphException;
 
-public class RequestProcesser {
+import java.util.List;
+
+public class RequestProcessor {
 
     private ChineseCheckersGame game;
 
-    public RequestProcesser(ChineseCheckersGame game) {
+    public RequestProcessor(ChineseCheckersGame game) {
         this.game = game;
     }
 
-    public void processStart(RequestStart rs) throws ChineseCheckersGameException {
+    public void processStart(RequestStart rs) {
         game.startGame(rs.getCountOfPlayers());
     }
 
-    public void processMove(RequestMove rm) throws GraphException, ChineseCheckersGameException {
+    public void processMove(RequestMove rm) {
         game.move(rm.getFrom(), rm.getTo());
     }
 
@@ -34,7 +35,11 @@ public class RequestProcesser {
         return game.getCheckerAt(rc.getPlace());
     }
 
-    public Players getWinner() {
+    public List<Players> getWinner() {
         return game.getWinner();
+    }
+
+    public GameState getGameState() {
+        return game.getGameState();
     }
 }

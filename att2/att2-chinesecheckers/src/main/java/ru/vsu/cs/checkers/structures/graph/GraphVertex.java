@@ -1,6 +1,5 @@
 package ru.vsu.cs.checkers.structures.graph;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class GraphVertex<T> {

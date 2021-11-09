@@ -1,31 +1,36 @@
 package ru.vsu.cs.checkers.display.console;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ru.vsu.cs.checkers.commandProviders.CommandProvider;
 import ru.vsu.cs.checkers.commandProviders.ConsoleCommandProvider;
 import ru.vsu.cs.checkers.commandProviders.ScriptedCommandProvider;
 import ru.vsu.cs.checkers.game.ChineseCheckersGame;
-import ru.vsu.cs.checkers.game.ChineseCheckersGameException;
+import ru.vsu.cs.checkers.game.GameState;
 import ru.vsu.cs.checkers.game.Players;
 import ru.vsu.cs.checkers.piece.Checker;
 import ru.vsu.cs.checkers.requests.*;
-import ru.vsu.cs.checkers.structures.graph.GraphException;
 import ru.vsu.cs.checkers.utils.ArrayUtils;
 import ru.vsu.cs.checkers.utils.DrawingUtils;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class ConsoleInterface {
 
+    private static final Logger log = LoggerFactory.getLogger(ConsoleInterface.class);
+
     private ChineseCheckersGame game = new ChineseCheckersGame();
-    private RequestProcesser rp = new RequestProcesser(game);
+    private RequestProcessor rp = new RequestProcessor(game);
     private CommandProvider cp;
 
     Scanner sc = new Scanner(System.in);
 
-    public void begin() throws FileNotFoundException, ChineseCheckersGameException, GraphException, InterruptedException {
+    public void begin() {
         System.out.println("--------------------------------------------------------------");
         System.out.println("Welcome to Chinese Checkers game!");
         System.out.println("You are in main menu");
@@ -37,27 +42,37 @@ public class ConsoleInterface {
         parseBeginInput(sc.nextLine());
     }
 
-    private void parseBeginInput(String message) throws FileNotFoundException, ChineseCheckersGameException, GraphException, InterruptedException {
+    private void parseBeginInput(String message) {
         switch (message) {
-            case "game" : {
+            case "game" -> {
                 cp = new ConsoleCommandProvider();
                 startGame();
                 break;
             }
-            case "simulation" : {
-                System.out.println("Type full path of source file");
-                String path = sc.nextLine();
-                cp = new ScriptedCommandProvider(new File(path));
-                startGame();
+            case "simulation" -> {
+                try {
+                    System.out.println("Type full path of source file");
+                    String path = sc.nextLine();
+                    cp = new ScriptedCommandProvider(new File(path));
+                    startGame();
+                } catch (FileNotFoundException e) {
+                    log.error(e.getMessage());
+                    System.exit(3);
+                }
                 break;
             }
-            case "exit" : {
+            case "exit" -> {
                 System.exit(0);
+            }
+            default -> {
+                System.out.println("Unknown command.");
+                begin();
+                break;
             }
         }
     }
 
-    private void startGame() throws ChineseCheckersGameException, GraphException, FileNotFoundException, InterruptedException {
+    private void startGame() {
         game = new ChineseCheckersGame();
         if (cp.getClass().equals(ConsoleCommandProvider.class)) {
             System.out.println("--------------------------------------------------------------");
@@ -70,25 +85,33 @@ public class ConsoleInterface {
         gameProcess();
     }
 
-    private void gameProcess() throws GraphException, ChineseCheckersGameException, FileNotFoundException, InterruptedException {
+    private void gameProcess() {
         printField();
         printWhoseMoving();
         System.out.println("--------------------------------------------------------------");
-        System.out.println("Game started, type \"help\" for see available commands");
+        System.out.println("Game started, type \"cmd\" for see available commands");
         System.out.println("--------------------------------------------------------------");
         while (true) {
             String command = cp.getNextLine();
             String[] arr = command.split("(\\s|[,;])+", 2);
             String firstWord = arr[0];
             switch (firstWord) {
-                case "move" : {
+                case "move" -> {
                     int[] indices = ArrayUtils.toIntArray(arr[1]);
                     RequestMove rm = new RequestMove(indices[0], indices[1]);
                     rp.processMove(rm);
-                    Players winner = rp.getWinner();
-                    if (winner != null) {
+                    GameState gameState = rp.getGameState();
+                    if (gameState == GameState.WINNER_EXIST) {
+                        List<Players> winners = rp.getWinner();
                         System.out.println("--------------------------------------------------------------");
-                        System.out.println("Player " + winner + " won this game!");
+                        if (winners.size() == 1) {
+                            System.out.println("Player " + winners.get(0) + " won this game!");
+                        } else {
+                            System.out.print("Players ");
+                            String str = winners.toString();
+                            System.out.print(str.substring(1, str.length() - 1));
+                            System.out.println(" tied for first place");
+                        }
                         System.out.println("--------------------------------------------------------------");
                         System.out.println("Type any symbols to console for continue");
                         sc.nextLine();
@@ -99,30 +122,52 @@ public class ConsoleInterface {
                     printWhoseMoving();
                     break;
                 }
-                case "continue" : {
+                case "continue" -> {
                     rp.processContinue();
                     printWhoseMoving();
                     break;
                 }
-                case "restart" : {
+                case "info" -> {
+                    try {
+                        String dir = System.getProperty("user.dir");
+                        String path = dir + "\\README.txt";
+                        Desktop.getDesktop().open(new File(path));
+                        log.info("README file opened");
+                    } catch (Exception e) {
+                        log.error("Can't find README file");
+                    }
+                    break;
+                }
+                case "restart" -> {
+                    log.info("Game restarted");
                     startGame();
                     break;
                 }
-                case "end" : {
+                case "end" -> {
+                    log.info("Game ended");
                     begin();
                     break;
                 }
-                case "help" : {
+                case "cmd" -> {
                     System.out.println("Available commands:");
                     System.out.println("    move *int* *int* - move your checker from first position to second");
                     System.out.println("    continue - end jumping");
+                    System.out.println("    info - open README file");
                     System.out.println("    restart - restart game");
                     System.out.println("    end - go to main menu");
                     break;
                 }
+                default -> {
+                    System.out.println("Unknown command. Try again.");
+                    break;
+                }
             }
             if (cp.getClass().equals(ScriptedCommandProvider.class)) {
-                TimeUnit.SECONDS.sleep(5);
+                try {
+                    TimeUnit.SECONDS.sleep(5);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
             }
         }
     }

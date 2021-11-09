@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class ScriptedCommandProvider implements CommandProvider{
 
-    Scanner sc;
+    private Scanner sc;
 
     public ScriptedCommandProvider(File file) throws FileNotFoundException {
         sc = new Scanner(file);
