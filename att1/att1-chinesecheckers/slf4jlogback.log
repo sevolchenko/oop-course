@@ -1,12 +1,52 @@
-03.11.2021 14:29:07.653 INFO   r.v.cs.checkers.Main - Application started.
-03.11.2021 14:29:07.785 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
-03.11.2021 14:30:28.238 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
-03.11.2021 14:30:28.244 INFO   r.v.c.c.u.GameUtils - Players initialized: [DARK, RED, GREEN]
-03.11.2021 14:30:28.245 INFO   r.v.c.c.u.GameUtils - Checkers for this players are ready.
-03.11.2021 14:30:28.245 INFO   r.v.c.c.u.GameUtils - Checkers staying on their places.
-03.11.2021 14:30:28.246 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
-03.11.2021 14:30:28.263 INFO   r.v.c.c.g.ChineseCheckersGame - DARK's checker 4 successfully moved at position 69
-03.11.2021 14:30:28.264 INFO   r.v.c.c.u.GameUtils - Checking for winner...
-03.11.2021 14:30:33.282 INFO   r.v.c.c.g.ChineseCheckersGame - Player DARK ended jumps
-03.11.2021 14:30:38.307 INFO   r.v.c.c.g.ChineseCheckersGame - Move from 24 to 63 is not possible.
-03.11.2021 14:30:38.308 INFO   r.v.c.c.u.GameUtils - Checking for winner...
+09.11.2021 18:06:05.992 INFO   r.v.cs.checkers.Main - Application started.
+09.11.2021 18:06:06.120 INFO   r.v.c.c.s.GraphBuilder - Build of graph is done.
+09.11.2021 18:06:06.122 INFO   r.v.c.c.piece.Board - Board done.
+09.11.2021 18:06:06.123 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+09.11.2021 18:36:15.222 INFO   r.v.cs.checkers.Main - Application started.
+09.11.2021 18:36:15.238 INFO   r.v.c.c.s.GraphBuilder - Build of graph is done.
+09.11.2021 18:36:15.239 INFO   r.v.c.c.piece.Board - Board done.
+09.11.2021 18:36:15.240 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+09.11.2021 18:36:18.640 INFO   r.v.c.c.s.GraphBuilder - Build of graph is done.
+09.11.2021 18:36:18.640 INFO   r.v.c.c.piece.Board - Board done.
+09.11.2021 18:36:18.640 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+09.11.2021 18:36:22.232 INFO   r.v.c.c.s.GameBuilder - Players initialized: [DARK, BLUE, WHITE, GREEN]
+09.11.2021 18:36:22.232 INFO   r.v.c.c.s.GameBuilder - Checkers staying on their places.
+09.11.2021 18:36:22.232 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+09.11.2021 18:38:52.227 INFO   r.v.cs.checkers.Main - Application started.
+09.11.2021 18:38:52.242 INFO   r.v.c.c.s.GraphBuilder - Build of graph is done.
+09.11.2021 18:38:52.243 INFO   r.v.c.c.piece.Board - Board done.
+09.11.2021 18:38:52.245 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+09.11.2021 18:38:56.692 INFO   r.v.c.c.s.GraphBuilder - Build of graph is done.
+09.11.2021 18:38:56.692 INFO   r.v.c.c.piece.Board - Board done.
+09.11.2021 18:38:56.692 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+09.11.2021 18:38:59.179 INFO   r.v.c.c.s.GameBuilder - Players initialized: [DARK, BLUE, WHITE, GREEN]
+09.11.2021 18:38:59.179 INFO   r.v.c.c.s.GameBuilder - Checkers staying on their places.
+09.11.2021 18:38:59.179 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+09.11.2021 18:39:42.555 INFO   r.v.cs.checkers.Main - Application started.
+09.11.2021 18:39:42.573 INFO   r.v.c.c.s.GraphBuilder - Build of graph is done.
+09.11.2021 18:39:42.575 INFO   r.v.c.c.piece.Board - Board done.
+09.11.2021 18:39:42.577 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+09.11.2021 18:39:46.283 INFO   r.v.c.c.s.GraphBuilder - Build of graph is done.
+09.11.2021 18:39:46.283 INFO   r.v.c.c.piece.Board - Board done.
+09.11.2021 18:39:46.283 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+09.11.2021 18:39:47.301 INFO   r.v.c.c.s.GameBuilder - Players initialized: [DARK, BLUE, WHITE, GREEN]
+09.11.2021 18:39:47.303 INFO   r.v.c.c.s.GameBuilder - Checkers staying on their places.
+09.11.2021 18:39:47.304 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.
+09.11.2021 18:53:02.962 INFO   r.v.cs.checkers.Main - Application started.
+09.11.2021 18:53:03.030 INFO   r.v.c.c.s.GraphBuilder - Build of graph is done.
+09.11.2021 18:53:03.030 INFO   r.v.c.c.piece.Board - Board done.
+09.11.2021 18:53:03.032 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+09.11.2021 18:53:06.637 INFO   r.v.c.c.s.GraphBuilder - Build of graph is done.
+09.11.2021 18:53:06.638 INFO   r.v.c.c.piece.Board - Board done.
+09.11.2021 18:53:06.638 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+09.11.2021 18:53:07.496 ERROR  r.v.c.c.g.ChineseCheckersGame - Wrong count of players. Expected 2, 3, 4, 6 but found 5
+09.11.2021 19:13:46.695 INFO   r.v.cs.checkers.Main - Application started.
+09.11.2021 19:13:46.710 INFO   r.v.c.c.s.GraphBuilder - Build of graph is done.
+09.11.2021 19:13:46.710 INFO   r.v.c.c.piece.Board - Board done.
+09.11.2021 19:13:46.710 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+09.11.2021 19:13:50.407 INFO   r.v.c.c.s.GraphBuilder - Build of graph is done.
+09.11.2021 19:13:50.407 INFO   r.v.c.c.piece.Board - Board done.
+09.11.2021 19:13:50.407 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+09.11.2021 19:13:54.787 INFO   r.v.c.c.s.GameBuilder - Players initialized: [DARK, BLUE, WHITE, GREEN]
+09.11.2021 19:13:54.787 INFO   r.v.c.c.s.GameBuilder - Checkers staying on their places
+09.11.2021 19:13:54.787 INFO   r.v.c.c.g.ChineseCheckersGame - Game started.

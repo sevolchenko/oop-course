@@ -1,5 +1,7 @@
-package ru.vsu.cs.checkers.utils;
+package ru.vsu.cs.checkers.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ru.vsu.cs.checkers.piece.Checker;
 import ru.vsu.cs.checkers.structures.graph.Graph;
 
@@ -8,9 +10,25 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class BoardUtils {
+public class GraphBuilder {
 
-    public static void initSectors(Graph<Checker> graph) {
+    private static final Logger log = LoggerFactory.getLogger(GraphBuilder.class);
+
+    private Graph<Checker> graph;
+
+    public GraphBuilder(Graph<Checker> graph) {
+        this.graph = graph;
+    }
+
+    public void build() {
+        initSectors();
+        connectSectors();
+        connectWithoutFormulas();
+        connectWithCenter();
+        log.info("Build of graph is done.");
+    }
+
+    private void initSectors() {
         Set<Integer> other = new HashSet(List.of(1, 3, 5, 6, 8, 10));
         for (int i = 0; i < 12; i++) {
             if (!other.contains(i)) {
@@ -73,25 +91,25 @@ public class BoardUtils {
         }
     }
 
-    public static void connectSectors(Graph<Checker> graph) {
+    private void connectSectors() {
 
-        connectHorizontal(graph, 0, 6);
-        connectHorizontal(graph, 9, 3);
-        connectHorizontal(graph, 7, 8);
-        connectHorizontal(graph, 11, 10);
+        connectHorizontal(0, 6);
+        connectHorizontal(9, 3);
+        connectHorizontal(7, 8);
+        connectHorizontal(11, 10);
 
-        connectRightDirected(graph, 6, 7);
-        connectRightDirected(graph, 8, 2);
-        connectRightDirected(graph, 10, 9);
-        connectRightDirected(graph, 5, 11);
+        connectRightDirected(6, 7);
+        connectRightDirected(8, 2);
+        connectRightDirected(10, 9);
+        connectRightDirected(5, 11);
 
-        connectLeftDirected(graph, 7, 1);
-        connectLeftDirected(graph, 11, 6);
-        connectLeftDirected(graph, 4, 10);
-        connectLeftDirected(graph, 9, 8);
+        connectLeftDirected(7, 1);
+        connectLeftDirected(11, 6);
+        connectLeftDirected(4, 10);
+        connectLeftDirected(9, 8);
     }
 
-    private static void connectHorizontal(Graph<Checker> graph, int sectorAbove, int sectorUnder) {
+    private void connectHorizontal(int sectorAbove, int sectorUnder) {
         graph.addAdge(10 * sectorAbove + 6, 2, 10 * sectorUnder + 9);
         for (int i = 0; i < 3; i++) {
             graph.addAdge(sectorAbove * 10 + 7 + i, 3, sectorUnder * 10 + 9 - i);
@@ -99,7 +117,7 @@ public class BoardUtils {
         }
     }
 
-    private static void connectRightDirected(Graph<Checker> graph, int sectorLeft, int sectorRight) { // Like /
+    private void connectRightDirected(int sectorLeft, int sectorRight) { // Like /
         List<Integer> list = new ArrayList<>(List.of(0, 1, 3, 6));
         int indexLeft = 2;
         int indexRight = 0;
@@ -113,7 +131,7 @@ public class BoardUtils {
         }
     }
 
-    private static void connectLeftDirected(Graph<Checker> graph, int sectorLeft, int sectorRight) { // Like \
+    private void connectLeftDirected(int sectorLeft, int sectorRight) { // Like \
         List<Integer> list = new ArrayList<>(List.of(0, 2, 5, 9));
         int indexLeft = 1;
         int indexRight = 3;
@@ -127,7 +145,7 @@ public class BoardUtils {
         }
     }
 
-    public static void connectWithCenter(Graph<Checker> graph) {
+    private void connectWithCenter() {
         graph.addAdge(120, 0, 60);
         graph.addAdge(120, 1, 76);
         graph.addAdge(120, 2, 89);
@@ -136,7 +154,7 @@ public class BoardUtils {
         graph.addAdge(120, 5, 119);
     }
 
-    public static void connectWithoutFormulas(Graph<Checker> graph) {
+    private void connectWithoutFormulas() {
         graph.addAdge(6, 3, 110);
         graph.addAdge(16, 4, 66);
         graph.addAdge(20, 5, 76);
@@ -144,5 +162,4 @@ public class BoardUtils {
         graph.addAdge(49, 1, 96);
         graph.addAdge(50, 2, 109);
     }
-
 }

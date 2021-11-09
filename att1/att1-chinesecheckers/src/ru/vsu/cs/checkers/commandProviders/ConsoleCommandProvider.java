@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ConsoleCommandProvider implements CommandProvider {
 
-    Scanner sc;
+    private Scanner sc;
 
     public ConsoleCommandProvider() {
         sc = new Scanner(System.in);
