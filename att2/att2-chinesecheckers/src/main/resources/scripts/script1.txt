@@ -1,0 +1,7 @@
+3
+move 4 69
+continue
+move 24 66
+continue
+end
+todo: do full script
