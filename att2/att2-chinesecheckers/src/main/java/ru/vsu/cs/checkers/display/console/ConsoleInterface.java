@@ -10,15 +10,16 @@ import ru.vsu.cs.checkers.game.GameState;
 import ru.vsu.cs.checkers.game.Players;
 import ru.vsu.cs.checkers.piece.Checker;
 import ru.vsu.cs.checkers.requests.*;
-import ru.vsu.cs.checkers.utils.ArrayUtils;
+import ru.vsu.cs.checkers.serialize.GameContext;
 import ru.vsu.cs.checkers.utils.DrawingUtils;
+import ru.vsu.cs.checkers.utils.FileUtils;
 
-import java.awt.*;
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 public class ConsoleInterface {
 
@@ -36,6 +37,7 @@ public class ConsoleInterface {
         System.out.println("You are in main menu");
         System.out.println("If you want to start game with some players (all the moves will be made by user) type \"game\"");
         System.out.println("If you want to see one simple game (without your ability to influence the game) type \"simulation\"");
+        System.out.println("If you want to load saved game type \"load\"");
         System.out.println("If you want to close the application type \"exit\"");
         System.out.println("--------------------------------------------------------------");
 
@@ -46,18 +48,56 @@ public class ConsoleInterface {
         switch (message) {
             case "game" -> {
                 cp = new ConsoleCommandProvider();
+                game = new ChineseCheckersGame();
                 startGame();
                 break;
             }
             case "simulation" -> {
+                cp = new ScriptedCommandProvider();
+                game = new ChineseCheckersGame();
+                startGame();
+                break;
+            }
+            case "load" -> {
                 try {
-                    System.out.println("Type full path of source file");
-                    String path = sc.nextLine();
-                    cp = new ScriptedCommandProvider(new File(path));
-                    startGame();
-                } catch (FileNotFoundException e) {
-                    log.error(e.getMessage());
-                    System.exit(3);
+                    File savesDirectory = FileUtils.getAbsolutePathOfSavesDirectory().toFile();
+                    if (!savesDirectory.exists()) {
+                        System.out.println("Can not find saves folder");
+                        begin();
+                    } else {
+                        File[] savesList = savesDirectory.listFiles();
+                        if (savesList.length > 0) {
+                            System.out.println("Available saves files: ");
+                            List<String> names = Arrays.stream(savesList)
+                                    .map(x -> x.toPath().getFileName().toString())
+                                    .filter(x -> x.endsWith(".json"))
+                                    .map(x -> {
+                                        String filename = x;
+                                        filename = filename.substring(0, filename.lastIndexOf('.'));
+                                        System.out.println("    " + filename);
+                                        return filename;
+                                    })
+                                    .collect(Collectors.toList());
+                            System.out.println("Type name of save");
+                            String filename = sc.nextLine();
+                            int index = names.indexOf(filename);
+                            if (index != -1) {
+                                GameContext gc = GameContext.read(savesList[index]);
+                                RequestLoad rl = new RequestLoad(gc);
+                                rp.processLoad(rl);
+                                startGame();
+                            } else {
+                                System.out.println("Can not find this file");
+                                begin();
+                            }
+                        } else {
+                            System.out.println("Saves folder is empty.");
+                            begin();
+                        }
+                    }
+                } catch (IOException e) {
+                    log.info("Can not read save file. Error: " + e.getMessage());
+                    begin();
                 }
                 break;
             }
@@ -73,7 +113,6 @@ public class ConsoleInterface {
     }
 
     private void startGame() {
-        game = new ChineseCheckersGame();
         if (cp.getClass().equals(ConsoleCommandProvider.class)) {
             System.out.println("--------------------------------------------------------------");
             System.out.println("Type count of players");
@@ -97,8 +136,11 @@ public class ConsoleInterface {
             String firstWord = arr[0];
             switch (firstWord) {
                 case "move" -> {
-                    int[] indices = ArrayUtils.toIntArray(arr[1]);
-                    RequestMove rm = new RequestMove(indices[0], indices[1]);
+                    String[] stringIndices = arr[1].split("(\\s|[,;])+", 2);
+                    List<Integer> indices = Arrays.stream(stringIndices)
+                            .map(Integer::parseInt)
+                            .collect(Collectors.toList());
+                    RequestMove rm = new RequestMove(indices.get(0), indices.get(1));
                     rp.processMove(rm);
                     GameState gameState = rp.getGameState();
                     if (gameState == GameState.WINNER_EXIST) {
@@ -127,14 +169,31 @@ public class ConsoleInterface {
                     printWhoseMoving();
                     break;
                 }
+                case "save" -> {
+                    try {
+                        if (arr.length < 2) {
+                            log.info("SaveName is not founded, type again");
+                            break;
+                        }
+                        String saveName = arr[1];
+                        GameContext gc = rp.getContext();
+                        gc.save(saveName);
+                    } catch (IOException e) {
+                        log.info("Failed to save that game. Error: " + e.getMessage());
+                    }
+                    break;
+                }
                 case "info" -> {
                     try {
-                        String dir = System.getProperty("user.dir");
-                        String path = dir + "\\README.txt";
-                        Desktop.getDesktop().open(new File(path));
-                        log.info("README file opened");
-                    } catch (Exception e) {
-                        log.error("Can't find README file");
+                        Path dir = FileUtils.getAbsolutePathOfCurrentDirectory();
+                        File file = new File(dir.toString(), "README.txt");
+                        FileOutputStream out = new FileOutputStream(file);
+                        InputStream inputStream = FileUtils.getInputStreamFromResources("README.txt");
+                        inputStream.transferTo(out);
+                        out.close();
+                        log.info("README file saved to " + file.getAbsolutePath());
+                    } catch (IOException e) {
+                        log.info("Can not access to README file");
                     }
                     break;
                 }
@@ -149,24 +208,20 @@ public class ConsoleInterface {
                     break;
                 }
                 case "cmd" -> {
+                    System.out.println("--------------------------------------------------------------");
                     System.out.println("Available commands:");
                     System.out.println("    move *int* *int* - move your checker from first position to second");
                     System.out.println("    continue - end jumping");
-                    System.out.println("    info - open README file");
+                    System.out.println("    save *save name* - save current game state");
+                    System.out.println("    info - save README file to current directory");
                     System.out.println("    restart - restart game");
                     System.out.println("    end - go to main menu");
+                    System.out.println("--------------------------------------------------------------");
                     break;
                 }
                 default -> {
                     System.out.println("Unknown command. Try again.");
                     break;
-                }
-            }
-            if (cp.getClass().equals(ScriptedCommandProvider.class)) {
-                try {
-                    TimeUnit.SECONDS.sleep(5);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
                 }
             }
         }

@@ -3,7 +3,10 @@ package ru.vsu.cs.checkers.game;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.vsu.cs.checkers.piece.*;
-import ru.vsu.cs.checkers.service.GameBuilder;
+import ru.vsu.cs.checkers.serialize.GameContext;
+import ru.vsu.cs.checkers.service.BoardBuilder;
+import ru.vsu.cs.checkers.service.CheckersPutter;
+import ru.vsu.cs.checkers.service.CurrentlyPlayingBuilder;
 import ru.vsu.cs.checkers.service.WinnerChecker;
 
 import java.util.ArrayDeque;
@@ -20,22 +23,21 @@ public class ChineseCheckersGame {
 
     private boolean isJump = false;
     private int lastMoved = -1;
+
     private WinnerChecker wc;
 
     public ChineseCheckersGame() {
-        currentlyPlaying = new ArrayDeque<>();
-        board = new Board();
         gameState = GameState.INITIALIZED;
         log.info("Game initialized.");
     }
 
     public void startGame(int countOfPlayers) {
-        GameBuilder gb = new GameBuilder(currentlyPlaying, board, countOfPlayers);
-        gb.build();
+        board = new BoardBuilder().build();
+        currentlyPlaying = new CurrentlyPlayingBuilder().build(countOfPlayers);
+        new CheckersPutter().put(board, currentlyPlaying);
         wc = new WinnerChecker(board, currentlyPlaying);
         gameState = GameState.PLAYING;
         log.info("Game started.");
-
     }
 
 
@@ -119,5 +121,20 @@ public class ChineseCheckersGame {
 
     public Checker getCheckerAt(int place) {
         return board.getChecker(place);
+    }
+
+    public GameContext context() {
+        return new GameContext(gameState, currentlyPlaying, board, isJump, lastMoved, wc);
+    }
+
+    public void fromContext(GameContext gc) {
+
+        gameState = gc.getGameState();
+        currentlyPlaying = gc.getCurrentlyPlaying();
+        board = new Board();
+        board.fromContext(gc.getBoard());
+        isJump = gc.isJump();
+        lastMoved = gc.getLastMoved();
+        wc =  new WinnerChecker(board, currentlyPlaying);
     }
 }

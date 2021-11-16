@@ -25,6 +25,7 @@ public class WinnerChecker {
 
     public List<Players> check() {
         List<Players> winners = new ArrayList<>();
+        log.info("Checking for winner...");
         for (Players player : currentlyPlaying) {
             int oppositeSector = GameUtils.getOppositeDirection(player.getSector());
             int count = 0;
@@ -38,7 +39,6 @@ public class WinnerChecker {
                 winners.add(player);
             }
         }
-        log.info("Checking for winner...");
         return winners;
     }
 

@@ -1,34 +1,21 @@
 package ru.vsu.cs.checkers.service;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.vsu.cs.checkers.game.Players;
-import ru.vsu.cs.checkers.piece.Board;
-import ru.vsu.cs.checkers.piece.Checker;
 
+import java.util.ArrayDeque;
 import java.util.Queue;
 
-public class GameBuilder {
+public class CurrentlyPlayingBuilder {
 
-    private static final Logger log = LoggerFactory.getLogger(GameBuilder.class);
+    private static final Logger log = LoggerFactory.getLogger(CurrentlyPlayingBuilder.class);
 
-    private Queue<Players> currentlyPlaying;
-    private Board board;
-    private int countOfPlayers;
-
-    public GameBuilder(Queue<Players> currentlyPlaying, Board board, int countOfPlayers) {
-        this.currentlyPlaying = currentlyPlaying;
-        this.board = board;
-        this.countOfPlayers = countOfPlayers;
+    public CurrentlyPlayingBuilder() {
     }
 
-    public void build() {
-        fillPlayers();
-        putCheckersOnTheirPlaces();
-    }
-
-    private void fillPlayers() {
+    public Queue<Players> build(int countOfPlayers) {
+        Queue<Players> currentlyPlaying = new ArrayDeque<>();
         currentlyPlaying.offer(Players.DARK);
         switch (countOfPlayers) {
             case 2: {
@@ -60,15 +47,7 @@ public class GameBuilder {
             }
         }
         log.info("Players initialized: " + currentlyPlaying.toString());
+        return currentlyPlaying;
     }
 
-    public void putCheckersOnTheirPlaces() {
-        for (Players player : currentlyPlaying) {
-            int sector = player.getSector();
-            for (int i = 0; i < 10; i++) {
-                board.put(10 * sector + i, new Checker(player));
-            }
-        }
-        log.info("Checkers staying on their places");
-    }
 }

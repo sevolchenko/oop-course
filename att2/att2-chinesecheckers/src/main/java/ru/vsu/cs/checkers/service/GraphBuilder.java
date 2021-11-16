@@ -16,20 +16,21 @@ public class GraphBuilder {
 
     private Graph<Checker> graph;
 
-    public GraphBuilder(Graph<Checker> graph) {
-        this.graph = graph;
+    public GraphBuilder() {
     }
 
-    public void build() {
+    public Graph<Checker> build() {
+        graph = new Graph<>();
         initSectors();
         connectSectors();
         connectWithoutFormulas();
         connectWithCenter();
         log.info("Build of graph is done.");
+        return graph;
     }
 
     private void initSectors() {
-        Set<Integer> other = new HashSet(List.of(1, 3, 5, 6, 8, 10));
+        var other = new HashSet<>(List.of(1, 3, 5, 6, 8, 10));
         for (int i = 0; i < 12; i++) {
             if (!other.contains(i)) {
                 graph.addAdge(10 * i, 2, 10 * i + 2);

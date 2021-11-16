@@ -37,7 +37,7 @@ public class DrawingUtils {
         if (checker == null) {
             return 'o';
         }
-        return checker.getOwner().toString().toLowerCase(Locale.ROOT).charAt(0);
+        return checker.getOwner().toString().charAt(0);
     }
 
 }

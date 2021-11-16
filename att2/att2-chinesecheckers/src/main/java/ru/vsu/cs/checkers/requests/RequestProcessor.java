@@ -4,6 +4,7 @@ import ru.vsu.cs.checkers.game.ChineseCheckersGame;
 import ru.vsu.cs.checkers.game.GameState;
 import ru.vsu.cs.checkers.game.Players;
 import ru.vsu.cs.checkers.piece.Checker;
+import ru.vsu.cs.checkers.serialize.GameContext;
 
 import java.util.List;
 
@@ -41,5 +42,13 @@ public class RequestProcessor {
 
     public GameState getGameState() {
         return game.getGameState();
+    }
+
+    public GameContext getContext() {
+        return game.context();
+    }
+
+    public void processLoad(RequestLoad rl) {
+        game.fromContext(rl.getContext());
     }
 }

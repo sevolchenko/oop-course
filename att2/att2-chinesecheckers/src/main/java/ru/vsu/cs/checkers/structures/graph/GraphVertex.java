@@ -1,5 +1,8 @@
 package ru.vsu.cs.checkers.structures.graph;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import ru.vsu.cs.checkers.serialize.GraphVertexContext;
+
 import java.util.Arrays;
 
 public class GraphVertex<T> {
@@ -27,7 +30,6 @@ public class GraphVertex<T> {
     }
 
     public Iterable<GraphVertex<T>> adjacencies() {
-
         return Arrays.asList(adjacencies);
     }
 
@@ -39,16 +41,20 @@ public class GraphVertex<T> {
     }
 
     public void add(GraphVertex<T> vertex, int direction) {
-
         adjacencies[direction] = vertex;
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         GraphVertex<T> other = (GraphVertex<T>) o;
         return number == other.number;
+    }
+
+    public GraphVertexContext context() {
+        return new GraphVertexContext(number, data, adjacencies);
     }
 
 }
