@@ -92,7 +92,7 @@ public class GraphBuilder {
         }
     }
 
-    private void connectSectors() {
+    private void connectSectors() { //todo: wrong connections
 
         connectHorizontal(0, 6);
         connectHorizontal(9, 3);
@@ -146,7 +146,7 @@ public class GraphBuilder {
         }
     }
 
-    private void connectWithCenter() {
+    private void connectWithCenter() { // fixed
         graph.addAdge(120, 0, 60);
         graph.addAdge(120, 1, 76);
         graph.addAdge(120, 2, 89);
@@ -155,11 +155,11 @@ public class GraphBuilder {
         graph.addAdge(120, 5, 119);
     }
 
-    private void connectWithoutFormulas() {
+    private void connectWithoutFormulas() { // fixed
         graph.addAdge(6, 3, 110);
-        graph.addAdge(16, 4, 66);
-        graph.addAdge(20, 5, 76);
-        graph.addAdge(36, 0, 89);
+        graph.addAdge(19, 4, 66);
+        graph.addAdge(20, 5, 79);
+        graph.addAdge(36, 0, 80);
         graph.addAdge(49, 1, 96);
         graph.addAdge(50, 2, 109);
     }

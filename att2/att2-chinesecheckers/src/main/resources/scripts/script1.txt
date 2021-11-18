@@ -1,7 +1,12 @@
-3
+2
 move 4 69
 continue
-move 24 66
+move 34 97
+continue
+move 8 67
+move 37 99
+move 3 110
+move 110 68
+move 68 66
 continue
 end
-todo: do full script

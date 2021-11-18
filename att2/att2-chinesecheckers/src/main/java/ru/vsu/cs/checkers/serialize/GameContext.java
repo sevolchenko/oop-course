@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.vsu.cs.checkers.game.GameState;
@@ -49,7 +48,7 @@ public class GameContext {
         return lastMoved;
     }
 
-    public GameContext(GameState gameState, Queue<Players> currentlyPlaying, Board board, boolean isJump, int lastMoved, WinnerChecker wc) {
+    public GameContext(GameState gameState, Queue<Players> currentlyPlaying, Board board, boolean isJump, int lastMoved) {
         this.gameState = gameState;
         this.currentlyPlaying = currentlyPlaying;
         this.board = board.context();
@@ -61,7 +60,7 @@ public class GameContext {
 
     }
 
-    public void save(String saveName) throws IOException {
+    public static void save(String saveName, GameContext gc) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
         File savesDir = FileUtils.getAbsolutePathOfSavesDirectory().toFile();
@@ -72,7 +71,7 @@ public class GameContext {
         if (save.createNewFile()) {
             log.info("Save file " + save.getAbsolutePath() + " was made");
         }
-        objectMapper.writeValue(save, this);
+        objectMapper.writeValue(save, gc);
     }
 
     public static GameContext read(File file) throws IOException {

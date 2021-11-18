@@ -48,13 +48,11 @@ public class ConsoleInterface {
         switch (message) {
             case "game" -> {
                 cp = new ConsoleCommandProvider();
-                game = new ChineseCheckersGame();
                 startGame();
                 break;
             }
             case "simulation" -> {
                 cp = new ScriptedCommandProvider();
-                game = new ChineseCheckersGame();
                 startGame();
                 break;
             }
@@ -66,18 +64,18 @@ public class ConsoleInterface {
                         begin();
                     } else {
                         File[] savesList = savesDirectory.listFiles();
-                        if (savesList.length > 0) {
+                        List<String> names = Arrays.stream(savesList)
+                                .map(x -> x.toPath().getFileName().toString())
+                                .filter(x -> x.endsWith(".json"))
+                                .map(x -> {
+                                    String filename = x;
+                                    filename = filename.substring(0, filename.lastIndexOf('.'));
+                                    return filename;
+                                })
+                                .collect(Collectors.toList());
+                        if (names.size() > 0) {
                             System.out.println("Available saves files: ");
-                            List<String> names = Arrays.stream(savesList)
-                                    .map(x -> x.toPath().getFileName().toString())
-                                    .filter(x -> x.endsWith(".json"))
-                                    .map(x -> {
-                                        String filename = x;
-                                        filename = filename.substring(0, filename.lastIndexOf('.'));
-                                        System.out.println("    " + filename);
-                                        return filename;
-                                    })
-                                    .collect(Collectors.toList());
+                            names.forEach(x -> System.out.println("    " + x));
                             System.out.println("Type name of save");
                             String filename = sc.nextLine();
                             int index = names.indexOf(filename);
@@ -85,7 +83,8 @@ public class ConsoleInterface {
                                 GameContext gc = GameContext.read(savesList[index]);
                                 RequestLoad rl = new RequestLoad(gc);
                                 rp.processLoad(rl);
-                                startGame();
+                                cp = new ConsoleCommandProvider();
+                                gameProcess();
                             } else {
                                 System.out.println("Can not find this file");
                                 begin();
@@ -113,7 +112,8 @@ public class ConsoleInterface {
     }
 
     private void startGame() {
-        if (cp.getClass().equals(ConsoleCommandProvider.class)) {
+        game = new ChineseCheckersGame();
+        if (cp instanceof ConsoleCommandProvider) {
             System.out.println("--------------------------------------------------------------");
             System.out.println("Type count of players");
         }
@@ -136,10 +136,18 @@ public class ConsoleInterface {
             String firstWord = arr[0];
             switch (firstWord) {
                 case "move" -> {
+                    if (arr.length < 2) {
+                        System.out.println("Type from and to parameters");
+                        break;
+                    }
                     String[] stringIndices = arr[1].split("(\\s|[,;])+", 2);
                     List<Integer> indices = Arrays.stream(stringIndices)
                             .map(Integer::parseInt)
                             .collect(Collectors.toList());
+                    if (indices.size() != 2) {
+                        System.out.println("Wrong count of indices");
+                        break;
+                    }
                     RequestMove rm = new RequestMove(indices.get(0), indices.get(1));
                     rp.processMove(rm);
                     GameState gameState = rp.getGameState();
@@ -172,14 +180,16 @@ public class ConsoleInterface {
                 case "save" -> {
                     try {
                         if (arr.length < 2) {
-                            log.info("SaveName is not founded, type again");
+                            System.out.println("SaveName is not founded");
+                            log.info("SaveName is not founded");
                             break;
                         }
                         String saveName = arr[1];
                         GameContext gc = rp.getContext();
-                        gc.save(saveName);
+                        GameContext.save(saveName, gc);
                     } catch (IOException e) {
-                        log.info("Failed to save that game. Error: " + e.getMessage());
+                        System.out.println("Failed to save that game.");
+                        log.info("Failed to save that game.\n Error: " + e.getMessage());
                     }
                     break;
                 }
@@ -191,9 +201,11 @@ public class ConsoleInterface {
                         InputStream inputStream = FileUtils.getInputStreamFromResources("README.txt");
                         inputStream.transferTo(out);
                         out.close();
+                        System.out.println("README file saved to " + file.getAbsolutePath());
                         log.info("README file saved to " + file.getAbsolutePath());
                     } catch (IOException e) {
-                        log.info("Can not access to README file");
+                        System.out.println("Can not access to README file");
+                        log.info("Can not access to README file. Error: " + e.getMessage());
                     }
                     break;
                 }
@@ -367,25 +379,25 @@ public class ConsoleInterface {
         rows[14].append(sectors[2][3]);
         rows[14].append(" \\");
 
-        rows[15].append("-----------           ---------");
+        rows[15].append("-----------          ----------");
 
-        rows[16].append("           \\ ");
+        rows[16].append("          \\ ");
         rows[16].append(sectors[3][3].reverse());
         rows[16].append(" /");
 
-        rows[17].append("            \\ ");
+        rows[17].append("           \\ ");
         rows[17].append(sectors[3][2].reverse());
         rows[17].append(" /");
 
-        rows[18].append("             \\ ");
+        rows[18].append("            \\ ");
         rows[18].append(sectors[3][1].reverse());
         rows[18].append(" /");
 
-        rows[19].append("              \\ ");
+        rows[19].append("             \\ ");
         rows[19].append(sectors[3][0].reverse());
         rows[19].append(" /");
 
-        rows[20].append("                .");
+        rows[20].append("               .");
 
 
         System.out.println();
@@ -413,6 +425,5 @@ public class ConsoleInterface {
         }
         return str;
     }
-
 
 }

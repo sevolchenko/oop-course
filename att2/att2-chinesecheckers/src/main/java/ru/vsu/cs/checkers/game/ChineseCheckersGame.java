@@ -124,11 +124,10 @@ public class ChineseCheckersGame {
     }
 
     public GameContext context() {
-        return new GameContext(gameState, currentlyPlaying, board, isJump, lastMoved, wc);
+        return new GameContext(gameState, currentlyPlaying, board, isJump, lastMoved);
     }
 
     public void fromContext(GameContext gc) {
-
         gameState = gc.getGameState();
         currentlyPlaying = gc.getCurrentlyPlaying();
         board = new Board();

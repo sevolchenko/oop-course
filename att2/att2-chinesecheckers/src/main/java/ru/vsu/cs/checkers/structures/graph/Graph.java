@@ -65,9 +65,12 @@ public class Graph<T> {
     public void fromContext(GraphContext<T> context) {
         vCount = context.getvCount();
         eCount = context.geteCount();
-        int i = 0;
         for (GraphVertexContext<T> vertexContext: context.getvEdjLists()) {
             GraphVertex<T> vertex = new GraphVertex<>(vertexContext.getNumber(), vertexContext.getData());
+            vEdjLists.add(vertex);
+        }
+        int i = 0;
+        for (GraphVertexContext<T> vertexContext: context.getvEdjLists()) {
             int j = 0;
             for (Integer connected : vertexContext.getAdjacencies()) {
                 if (connected != null) {
@@ -75,7 +78,6 @@ public class Graph<T> {
                 }
                 j++;
             }
-            vEdjLists.add(vertex);
             i++;
         }
     }

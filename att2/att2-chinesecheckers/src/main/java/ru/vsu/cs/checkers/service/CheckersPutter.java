@@ -18,7 +18,7 @@ public class CheckersPutter {
 
     public void put(Board board, Queue<Players> currentlyPlaying) {
         for (Players player : currentlyPlaying) {
-            int sector = player.getSector();
+            int sector = player.ordinal();
             for (int i = 0; i < 10; i++) {
                 board.put(10 * sector + i, new Checker(player));
             }
