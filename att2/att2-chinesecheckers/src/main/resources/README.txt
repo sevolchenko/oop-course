@@ -62,7 +62,7 @@ Origin rules (on English) you can find here: https://www.mastersofgames.com/rule
                   ------------------
 		9 is connected with: 66, 67, 8, 5
 		66 is connected with: 19, 70, 63, 67, 9
-       	 	70 is connected with: 19, 15, 72, 71, 63, 66
+       	70 is connected with: 19, 15, 72, 71, 63, 66
 		19 is connected with: 18, 15, 70, 66
 		72 is connected with: 15, 12, 75, 74, 71, 70
 		etc.

@@ -5,10 +5,8 @@ import org.slf4j.LoggerFactory;
 import ru.vsu.cs.checkers.piece.Checker;
 import ru.vsu.cs.checkers.structures.graph.Graph;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class GraphBuilder {
 
@@ -92,57 +90,72 @@ public class GraphBuilder {
         }
     }
 
-    private void connectSectors() { //todo: wrong connections
+    private void connectSectors() {
 
-        connectHorizontal(0, 6);
-        connectHorizontal(9, 3);
-        connectHorizontal(7, 8);
-        connectHorizontal(11, 10);
+        connectHorizontal(0, 6, true);
+        connectHorizontal(9, 3, true);
+        connectHorizontal(7, 8, false);
+        connectHorizontal(11, 10, false);
 
-        connectRightDirected(6, 7);
-        connectRightDirected(8, 2);
-        connectRightDirected(10, 9);
-        connectRightDirected(5, 11);
+        connectRightDirected(6, 7, true);
+        connectRightDirected(10, 9, true);
+        connectRightDirected(8, 2, false);
+        connectRightDirected(5, 11, false);
 
-        connectLeftDirected(7, 1);
-        connectLeftDirected(11, 6);
-        connectLeftDirected(4, 10);
-        connectLeftDirected(9, 8);
+        connectLeftDirected(7, 1, true);
+        connectLeftDirected(4, 10, true);
+        connectLeftDirected(11, 6, false);
+        connectLeftDirected(9, 8, false);
     }
 
-    private void connectHorizontal(int sectorAbove, int sectorUnder) {
-        graph.addAdge(10 * sectorAbove + 6, 2, 10 * sectorUnder + 9);
-        for (int i = 0; i < 3; i++) {
-            graph.addAdge(sectorAbove * 10 + 7 + i, 3, sectorUnder * 10 + 9 - i);
-            graph.addAdge(sectorAbove * 10 + 7 + i, 2, sectorUnder * 10 + 8 - i);
+    private void connectHorizontal(int sectorAbove, int sectorUnder, boolean isUnderRight) {
+        int addition = isUnderRight ? 0 : 1;
+
+        graph.addAdge(sectorAbove * 10 + 6, 2 + addition, sectorUnder * 10 + 9);
+        graph.addAdge(sectorAbove * 10 + 7, 2 + addition, sectorUnder * 10 + 8);
+        graph.addAdge(sectorAbove * 10 + 8, 2 + addition, sectorUnder * 10 + 7);
+        graph.addAdge(sectorAbove * 10 + 9, 2 + addition, sectorUnder * 10 + 6);
+
+        graph.addAdge(sectorAbove * 10 + 7 - addition, 3 - addition, sectorUnder * 10 + 9 - addition);
+        graph.addAdge(sectorAbove * 10 + 8 - addition, 3 - addition, sectorUnder * 10 + 8 - addition);
+        graph.addAdge(sectorAbove * 10 + 9 - addition, 3 - addition, sectorUnder * 10 + 7 - addition);
+    }
+
+    private void connectRightDirected(int sectorLeft, int sectorRight, boolean isRightUnder) { // Like /
+        int addition = isRightUnder ? 0 : 1;
+
+        graph.addAdge(sectorLeft * 10 + 6, 2 - addition, sectorRight * 10);
+        graph.addAdge(sectorLeft * 10 + 3, 2 - addition, sectorRight * 10 + 1);
+        graph.addAdge(sectorLeft * 10 + 1, 2 - addition, sectorRight * 10 + 3);
+        graph.addAdge(sectorLeft * 10, 2 - addition, sectorRight * 10 + 6);
+
+        if (isRightUnder) {
+            graph.addAdge(sectorLeft * 10 + 3, 1, sectorRight * 10);
+            graph.addAdge(sectorLeft * 10 + 1, 1, sectorRight * 10 + 1);
+            graph.addAdge(sectorLeft * 10, 1, sectorRight * 10 + 3);
+        } else {
+            graph.addAdge(sectorLeft * 10 + 6, 2, sectorRight * 10 + 1);
+            graph.addAdge(sectorLeft * 10 + 3, 2, sectorRight * 10 + 3);
+            graph.addAdge(sectorLeft * 10 + 1, 2, sectorRight * 10 + 6);
         }
     }
 
-    private void connectRightDirected(int sectorLeft, int sectorRight) { // Like /
-        List<Integer> list = new ArrayList<>(List.of(0, 1, 3, 6));
-        int indexLeft = 2;
-        int indexRight = 0;
+    private void connectLeftDirected(int sectorLeft, int sectorRight, boolean isLeftUnder) { // Like \
+        int addition = isLeftUnder ? 0 : 1;
 
-        graph.addAdge(10 * sectorLeft + 6, 2, 10 * sectorRight);
-        for (int i = 0; i < 3; i++) {
-            graph.addAdge(sectorLeft * 10 + list.get(indexLeft), 1, sectorRight * 10 + list.get(indexRight));
-            graph.addAdge(sectorLeft * 10 + list.get(indexLeft), 2, sectorRight * 10 + list.get(indexRight + 1));
-            indexLeft--;
-            indexRight++;
-        }
-    }
+        graph.addAdge(sectorRight * 10 + 9, 3 + addition, sectorLeft * 10);
+        graph.addAdge(sectorRight * 10 + 5, 3 + addition, sectorLeft * 10 + 2);
+        graph.addAdge(sectorRight * 10 + 2, 3 + addition, sectorLeft * 10 + 5);
+        graph.addAdge(sectorRight * 10, 3 + addition, sectorLeft * 10 + 9);
 
-    private void connectLeftDirected(int sectorLeft, int sectorRight) { // Like \
-        List<Integer> list = new ArrayList<>(List.of(0, 2, 5, 9));
-        int indexLeft = 1;
-        int indexRight = 3;
-
-        graph.addAdge(10 * sectorLeft, 1, 10 * sectorRight + 9);
-        for (int i = 0; i < 3; i++) {
-            graph.addAdge(sectorLeft * 10 + list.get(indexLeft), 0, sectorRight * 10 + list.get(indexRight));
-            graph.addAdge(sectorLeft * 10 + list.get(indexLeft), 1, sectorRight * 10 + list.get(indexRight - 1));
-            indexLeft++;
-            indexRight--;
+        if (isLeftUnder) {
+            graph.addAdge(sectorRight * 10 + 5, 4, sectorLeft * 10);
+            graph.addAdge(sectorRight * 10 + 2, 4, sectorLeft * 10 + 2);
+            graph.addAdge(sectorRight * 10, 4, sectorLeft * 10 + 5);
+        } else {
+            graph.addAdge(sectorRight * 10 + 9, 3, sectorLeft * 10 + 2);
+            graph.addAdge(sectorRight * 10 + 5, 3, sectorLeft * 10 + 5);
+            graph.addAdge(sectorRight * 10 + 2, 3, sectorLeft * 10 + 9);
         }
     }
 

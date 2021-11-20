@@ -26,7 +26,7 @@ public class ConsoleInterface {
     private static final Logger log = LoggerFactory.getLogger(ConsoleInterface.class);
 
     private ChineseCheckersGame game = new ChineseCheckersGame();
-    private RequestProcessor rp = new RequestProcessor(game);
+    private final RequestProcessor rp = new RequestProcessor(game);
     private CommandProvider cp;
 
     Scanner sc = new Scanner(System.in);
@@ -276,7 +276,7 @@ public class ConsoleInterface {
         rows[4].append(sectors[0][3]);
         rows[4].append(" \\");
 
-        rows[5].append("-----------         -----------");
+        rows[5].append("----------           ----------");
 
         rows[6].append("\\ ");
         rows[6].append(sectors[5][3].reverse());
@@ -379,7 +379,7 @@ public class ConsoleInterface {
         rows[14].append(sectors[2][3]);
         rows[14].append(" \\");
 
-        rows[15].append("-----------          ----------");
+        rows[15].append("----------           ----------");
 
         rows[16].append("          \\ ");
         rows[16].append(sectors[3][3].reverse());
