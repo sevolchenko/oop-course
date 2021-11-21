@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a1a4b68-034a-460a-911a-53fd29e2c5e3" name="Changes" comment="1.3 (GraphBuilder fixed)">
+    <list default="true" id="3a1a4b68-034a-460a-911a-53fd29e2c5e3" name="Changes" comment="1.4 (ready project)">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/att2-chinesecheckers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/att2-chinesecheckers.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/slf4jlogback.log" beforeDir="false" afterPath="$PROJECT_DIR$/slf4jlogback.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/commandProviders/ConsoleCommandProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/commandProviders/ConsoleCommandProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/display/console/ConsoleInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/display/console/ConsoleInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/game/ChineseCheckersGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/game/ChineseCheckersGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/serialize/GameContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/serialize/GameContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/service/CurrentlyPlayingBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/service/CurrentlyPlayingBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/scripts/script1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scripts/script1.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637414435324</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="1.4 (ready project)">
+      <created>1637525827350</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1637525827350</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -235,7 +239,19 @@
     <MESSAGE value="1.1 (att2 copied)" />
     <MESSAGE value="1.2 (Json support added)" />
     <MESSAGE value="1.3 (GraphBuilder fixed)" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.3 (GraphBuilder fixed)" />
+    <MESSAGE value="1.4 (ready project)" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.4 (ready project)" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/vsu/cs/checkers/display/console/ConsoleInterface.java</url>
+          <line>237</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -138,3 +138,50 @@
 21.11.2021 22:53:31.491 INFO   r.v.c.c.g.ChineseCheckersGame - Winner not founded.
 21.11.2021 22:53:31.491 INFO   r.v.c.c.g.ChineseCheckersGame - Player DARK ended jumps
 21.11.2021 22:53:36.506 INFO   r.v.c.c.d.c.ConsoleInterface - Game ended
+21.11.2021 23:18:51.995 INFO   r.v.cs.checkers.Main - Application started.
+21.11.2021 23:18:51.998 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+21.11.2021 23:19:36.956 INFO   r.v.c.c.s.GraphBuilder - Build of graph is done.
+21.11.2021 23:19:36.956 INFO   r.v.c.c.piece.Board - Board done.
+21.11.2021 23:20:23.550 INFO   r.v.c.c.g.ChineseCheckersGame - DARK's checker 97 successfully moved at position 98
+21.11.2021 23:20:31.999 INFO   r.v.c.c.g.ChineseCheckersGame - WHITE's checker 7 successfully moved at position 4
+21.11.2021 23:20:31.999 INFO   r.v.c.c.s.WinnerChecker - Checking for winner...
+21.11.2021 23:20:32.000 INFO   r.v.c.c.g.ChineseCheckersGame - Winner not founded.
+21.11.2021 23:20:39.144 INFO   r.v.c.c.g.ChineseCheckersGame - DARK's checker 98 successfully moved at position 97
+21.11.2021 23:20:45.520 INFO   r.v.c.c.g.ChineseCheckersGame - WHITE's checker 69 successfully moved at position 7
+21.11.2021 23:20:45.520 INFO   r.v.c.c.s.WinnerChecker - Checking for winner...
+21.11.2021 23:20:45.520 INFO   r.v.c.c.g.ChineseCheckersGame - Winner founded: WHITE
+21.11.2021 23:20:45.538 INFO   r.v.c.c.s.WinnerChecker - Checking for winner...
+21.11.2021 23:21:54.532 INFO   r.v.cs.checkers.Main - Application started.
+21.11.2021 23:21:54.533 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+21.11.2021 23:22:00.656 INFO   r.v.c.c.s.GraphBuilder - Build of graph is done.
+21.11.2021 23:22:00.656 INFO   r.v.c.c.piece.Board - Board done.
+21.11.2021 23:22:36.530 INFO   r.v.c.c.g.ChineseCheckersGame - DARK's checker 97 successfully moved at position 98
+21.11.2021 23:22:40.012 INFO   r.v.c.c.g.ChineseCheckersGame - Move is not possible. Checker's owner is not WHITE
+21.11.2021 23:22:45.529 INFO   r.v.c.c.g.ChineseCheckersGame - WHITE's checker 7 successfully moved at position 4
+21.11.2021 23:22:45.530 INFO   r.v.c.c.s.WinnerChecker - Checking for winner...
+21.11.2021 23:22:45.530 INFO   r.v.c.c.g.ChineseCheckersGame - Winner not founded.
+21.11.2021 23:22:52.689 INFO   r.v.c.c.g.ChineseCheckersGame - DARK's checker 98 successfully moved at position 97
+21.11.2021 23:23:34.152 INFO   r.v.c.c.g.ChineseCheckersGame - WHITE's checker 69 successfully moved at position 7
+21.11.2021 23:23:34.152 INFO   r.v.c.c.s.WinnerChecker - Checking for winner...
+21.11.2021 23:23:34.153 INFO   r.v.c.c.g.ChineseCheckersGame - Winner founded: WHITE
+21.11.2021 23:23:38.349 INFO   r.v.c.c.s.WinnerChecker - Checking for winner...
+21.11.2021 23:25:22.973 INFO   r.v.cs.checkers.Main - Application started.
+21.11.2021 23:25:22.986 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+21.11.2021 23:25:29.431 INFO   r.v.c.c.s.GraphBuilder - Build of graph is done.
+21.11.2021 23:25:29.431 INFO   r.v.c.c.piece.Board - Board done.
+21.11.2021 23:26:35.354 INFO   r.v.c.c.g.ChineseCheckersGame - DARK's checker 97 successfully moved at position 38
+21.11.2021 23:26:45.913 INFO   r.v.c.c.g.ChineseCheckersGame - WHITE's checker 69 successfully moved at position 4
+21.11.2021 23:26:48.985 INFO   r.v.c.c.s.WinnerChecker - Checking for winner...
+21.11.2021 23:26:48.985 INFO   r.v.c.c.g.ChineseCheckersGame - A lot of winners founded.
+21.11.2021 23:26:48.987 INFO   r.v.c.c.g.ChineseCheckersGame - Player DARK ended jumps
+21.11.2021 23:26:48.988 INFO   r.v.c.c.s.WinnerChecker - Checking for winner...
+21.11.2021 23:27:05.589 INFO   r.v.cs.checkers.Main - Application started.
+21.11.2021 23:27:05.595 INFO   r.v.c.c.g.ChineseCheckersGame - Game initialized.
+21.11.2021 23:27:11.260 INFO   r.v.c.c.s.GraphBuilder - Build of graph is done.
+21.11.2021 23:27:11.260 INFO   r.v.c.c.piece.Board - Board done.
+21.11.2021 23:27:13.752 INFO   r.v.c.c.g.ChineseCheckersGame - DARK's checker 97 successfully moved at position 38
+21.11.2021 23:27:16.523 INFO   r.v.c.c.g.ChineseCheckersGame - WHITE's checker 69 successfully moved at position 4
+21.11.2021 23:27:19.473 INFO   r.v.c.c.s.WinnerChecker - Checking for winner...
+21.11.2021 23:27:19.473 INFO   r.v.c.c.g.ChineseCheckersGame - A lot of winners founded.
+21.11.2021 23:27:19.476 INFO   r.v.c.c.g.ChineseCheckersGame - Player DARK ended jumps
+21.11.2021 23:27:19.476 INFO   r.v.c.c.s.WinnerChecker - Checking for winner...

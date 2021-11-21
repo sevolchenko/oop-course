@@ -17,6 +17,5 @@ public class ConsoleCommandProvider implements CommandProvider {
 
     @Override
     public void close() {
-        sc.close();
     }
 }
