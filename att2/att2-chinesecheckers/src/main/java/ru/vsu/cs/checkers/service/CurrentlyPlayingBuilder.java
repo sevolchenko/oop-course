@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import ru.vsu.cs.checkers.game.Players;
 
 import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Queue;
 
 public class CurrentlyPlayingBuilder {
@@ -14,8 +15,8 @@ public class CurrentlyPlayingBuilder {
     public CurrentlyPlayingBuilder() {
     }
 
-    public Queue<Players> build(int countOfPlayers) {
-        Queue<Players> currentlyPlaying = new ArrayDeque<>();
+    public Deque<Players> build(int countOfPlayers) {
+        Deque<Players> currentlyPlaying = new ArrayDeque<>();
         currentlyPlaying.offer(Players.DARK);
         switch (countOfPlayers) {
             case 2: {

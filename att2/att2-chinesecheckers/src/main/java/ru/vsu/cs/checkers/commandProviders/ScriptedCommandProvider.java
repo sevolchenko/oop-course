@@ -36,5 +36,8 @@ public class ScriptedCommandProvider implements CommandProvider {
         return sc.nextLine();
     }
 
-
+    @Override
+    public void close() {
+        sc.close();
+    }
 }

@@ -14,6 +14,7 @@ import ru.vsu.cs.checkers.utils.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Deque;
 import java.util.Queue;
 
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
@@ -22,7 +23,7 @@ public class GameContext {
     private static final Logger log = LoggerFactory.getLogger(GameContext.class);
 
     private GameState gameState;
-    private Queue<Players> currentlyPlaying;
+    private Deque<Players> currentlyPlaying;
     private BoardContext board;
 
     private boolean jump;
@@ -32,7 +33,7 @@ public class GameContext {
         return gameState;
     }
 
-    public Queue<Players> getCurrentlyPlaying() {
+    public Deque<Players> getCurrentlyPlaying() {
         return currentlyPlaying;
     }
 
@@ -48,7 +49,7 @@ public class GameContext {
         return lastMoved;
     }
 
-    public GameContext(GameState gameState, Queue<Players> currentlyPlaying, Board board, boolean isJump, int lastMoved) {
+    public GameContext(GameState gameState, Deque<Players> currentlyPlaying, Board board, boolean isJump, int lastMoved) {
         this.gameState = gameState;
         this.currentlyPlaying = currentlyPlaying;
         this.board = board.context();

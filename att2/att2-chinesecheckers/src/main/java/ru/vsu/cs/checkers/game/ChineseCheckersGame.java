@@ -10,6 +10,7 @@ import ru.vsu.cs.checkers.service.CurrentlyPlayingBuilder;
 import ru.vsu.cs.checkers.service.WinnerChecker;
 
 import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.List;
 import java.util.Queue;
 
@@ -18,7 +19,7 @@ public class ChineseCheckersGame {
     private static final Logger log = LoggerFactory.getLogger(ChineseCheckersGame.class);
 
     private GameState gameState;
-    private Queue<Players> currentlyPlaying;
+    private Deque<Players> currentlyPlaying;
     private Board board;
 
     private boolean isJump = false;
@@ -67,17 +68,12 @@ public class ChineseCheckersGame {
             lastMoved = to;
             log.info(getWhoseMoving() + "'s checker " + from + " successfully moved at position " + to);
             if (connected) {
-                currentlyPlaying.offer(currentlyPlaying.poll());
-                isJump = false;
+                nextMoving();
             } else if (acrossOne){
                 isJump = true;
             }
         } else {
             log.info("Move from " + from + " to " + to + " is not possible.");
-        }
-
-        if (getWhoseMoving() == Players.DARK && !isJump) {
-            checkWinner();
         }
     }
 
@@ -99,12 +95,19 @@ public class ChineseCheckersGame {
 
     public void continueAfterJump() {
         if (isJump) {
+            nextMoving();
             log.info("Player " + getWhoseMoving() + " ended jumps");
-            currentlyPlaying.offer(currentlyPlaying.poll());
-            isJump = false;
         } else  {
             log.info("Player " + getWhoseMoving() + " can't continue");
         }
+    }
+
+    public void nextMoving() {
+        if (currentlyPlaying.peekLast() == Players.DARK) {
+            checkWinner();
+        }
+        currentlyPlaying.offer(currentlyPlaying.poll());
+        isJump = false;
     }
 
     public GameState getGameState() {

@@ -14,4 +14,9 @@ public class ConsoleCommandProvider implements CommandProvider {
     public String getNextLine() {
         return sc.nextLine();
     }
+
+    @Override
+    public void close() {
+        sc.close();
+    }
 }

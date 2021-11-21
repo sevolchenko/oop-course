@@ -150,24 +150,6 @@ public class ConsoleInterface {
                     }
                     RequestMove rm = new RequestMove(indices.get(0), indices.get(1));
                     rp.processMove(rm);
-                    GameState gameState = rp.getGameState();
-                    if (gameState == GameState.WINNER_EXIST) {
-                        List<Players> winners = rp.getWinner();
-                        System.out.println("--------------------------------------------------------------");
-                        if (winners.size() == 1) {
-                            System.out.println("Player " + winners.get(0) + " won this game!");
-                        } else {
-                            System.out.print("Players ");
-                            String str = winners.toString();
-                            System.out.print(str.substring(1, str.length() - 1));
-                            System.out.println(" tied for first place");
-                        }
-                        System.out.println("--------------------------------------------------------------");
-                        System.out.println("Type any symbols to console for continue");
-                        sc.nextLine();
-                        begin();
-                        return;
-                    }
                     printField();
                     printWhoseMoving();
                     break;
@@ -187,6 +169,7 @@ public class ConsoleInterface {
                         String saveName = arr[1];
                         GameContext gc = rp.getContext();
                         GameContext.save(saveName, gc);
+                        System.out.println("Game saved");
                     } catch (IOException e) {
                         System.out.println("Failed to save that game.");
                         log.info("Failed to save that game.\n Error: " + e.getMessage());
@@ -215,6 +198,7 @@ public class ConsoleInterface {
                     break;
                 }
                 case "end" -> {
+                    cp.close();
                     log.info("Game ended");
                     begin();
                     break;
@@ -235,6 +219,26 @@ public class ConsoleInterface {
                     System.out.println("Unknown command. Try again.");
                     break;
                 }
+            }
+            GameState gameState = rp.getGameState();
+            if (gameState == GameState.WINNER_EXIST) {
+                cp.close();
+                printField();
+                List<Players> winners = rp.getWinner();
+                System.out.println("--------------------------------------------------------------");
+                if (winners.size() == 1) {
+                    System.out.println("Player " + winners.get(0) + " won this game!");
+                } else {
+                    System.out.print("Players ");
+                    String str = winners.toString();
+                    System.out.print(str.substring(1, str.length() - 1));
+                    System.out.println(" tied for first place");
+                }
+                System.out.println("--------------------------------------------------------------");
+                System.out.println("Type any symbols to console for continue");
+                sc.nextLine();
+                begin();
+                return;
             }
         }
     }

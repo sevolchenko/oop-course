@@ -9,4 +9,8 @@ move 3 110
 move 110 68
 move 68 66
 continue
+move 33 80
+move 80 98
+move 98 96
+continue
 end
