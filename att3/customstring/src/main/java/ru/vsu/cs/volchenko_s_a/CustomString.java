@@ -20,8 +20,7 @@ public class CustomString implements Comparable<CustomString> {
     }
 
     public CustomString(final String base) {
-        sequence = base.toCharArray().clone();
-        size = base.length();
+        this(base.toCharArray());
     }
 
     public CustomString(final char c) {
@@ -57,9 +56,8 @@ public class CustomString implements Comparable<CustomString> {
                          final int dstBegin) {
         checkIndex(srcBegin);
         checkIndex(srcEnd);
-        for (int index = srcBegin; index < srcEnd; index++) {
-            dst[dstBegin + index - srcBegin] = sequence[index];
-        }
+        if (srcEnd - srcBegin >= 0)
+            System.arraycopy(sequence, srcBegin, dst, dstBegin, srcEnd - srcBegin);
     }
 
     @Override
@@ -70,11 +68,11 @@ public class CustomString implements Comparable<CustomString> {
         return compareTo(that) == 0;
     }
 
-    public boolean equalsIgnoreCase(final Object o) { //todo: use toLowerCase;
+    public boolean equalsIgnoreCase(final Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CustomString that = (CustomString) o;
-        return compareTo(that) == 0;
+        return compareToIgnoreCase(that) == 0;
     }
 
     @Override
@@ -95,8 +93,8 @@ public class CustomString implements Comparable<CustomString> {
         return 0;
     }
 
-    public int compareToIgnoreCase(final CustomString o) { //todo: use toLowerCase;
-        return 0;
+    public int compareToIgnoreCase(final CustomString o) {
+        return toLowerCase().compareTo(o.toLowerCase());
     }
 
     public boolean regionMatches(final int toffset,
@@ -111,7 +109,7 @@ public class CustomString implements Comparable<CustomString> {
                                  final CustomString other,
                                  final int ooffset,
                                  final int len) {
-        return regionMatches(ignoreCase, toffset, other.sequence, ooffset, len);
+        return regionMatches(ignoreCase, toffset, other.toCharArray(), ooffset, len);
     }
 
     public boolean regionMatches(final int toffset,
@@ -126,11 +124,14 @@ public class CustomString implements Comparable<CustomString> {
                                  final char[] other,
                                  final int ooffset,
                                  final int len) {
+        CustomString thisCopy = new CustomString(this);
+        char[] otherCopy = other.clone();
         if (ignoreCase) {
-            //todo: toLowerCase
+            thisCopy = thisCopy.toLowerCase();
+            otherCopy = toLowerCase(otherCopy);
         }
         for (int index = 0; index < len; index++) {
-            if (sequence[toffset + index] != other[ooffset + index]) {
+            if (thisCopy.sequence[toffset + index] != otherCopy[ooffset + index]) {
                 return false;
             }
         }
@@ -147,7 +148,7 @@ public class CustomString implements Comparable<CustomString> {
     }
 
     public boolean endsWith(final CustomString cs) {
-        return regionMatches(size - cs.size + 1, cs, 0, cs.size);
+        return regionMatches(size - cs.size, cs, 0, cs.size);
     }
 
     public int indexOf(final char c) {
@@ -219,10 +220,9 @@ public class CustomString implements Comparable<CustomString> {
                 res[index] = '\u0000';
             }
         } else {
-            res = new char[endIndex - beginIndex + 1];
-            for (int index = beginIndex; index < endIndex; index++) {
-                res[index - beginIndex] = sequence[index];
-            }
+            res = new char[endIndex - beginIndex];
+            if (endIndex >= beginIndex)
+                System.arraycopy(sequence, beginIndex, res, 0, endIndex - beginIndex);
         }
         return new CustomString(res);
     }
@@ -240,7 +240,7 @@ public class CustomString implements Comparable<CustomString> {
     }
 
     public boolean contains(final CustomString cs) {
-        return contains(Arrays.copyOf(cs.sequence, cs.size));
+        return contains(cs.toCharArray());
     }
 
     public boolean contains(final char[] cs) {
@@ -254,7 +254,7 @@ public class CustomString implements Comparable<CustomString> {
 
     public CustomString replace(final char oldChar,
                                 final char newChar) {
-        char[] res = Arrays.copyOf(sequence, size);
+        char[] res = toCharArray();
         for (int index = 0; index < res.length; index++) {
             if (res[index] == oldChar) {
                 res[index] = newChar;
@@ -263,28 +263,49 @@ public class CustomString implements Comparable<CustomString> {
         return new CustomString(res);
     }
 
-    public CustomString replace(final CustomString old) {
-        //todo
-        return null;
-    }
-
     public CustomString replace(final CustomString target,
                                 final CustomString replacement) {
-        return null;
+        CustomString res = new CustomString(this);
+        int indexInRes = 0;
+        char[] tar = target.toCharArray();
+        char[] rep = replacement.toCharArray();
+        for (int beginIndex = 0; size - beginIndex >= tar.length; beginIndex++) {
+            if (regionMatches(beginIndex, tar, 0, tar.length)) {
+                while (res.sequence.length < res.size - tar.length + rep.length) {
+                    res.sequence = Arrays.copyOf(res.sequence, res.sequence.length * 2);
+                }
+                System.arraycopy(res.sequence, indexInRes + tar.length, res.sequence,
+                        indexInRes + rep.length, res.size - indexInRes - tar.length + 1);
+                res.size += rep.length - tar.length;
+                if (tar.length > rep.length) {
+                    for (int index = res.size; index < res.sequence.length; index++) {
+                        res.sequence[index] = '\u0000';
+                    }
+                }
+                System.arraycopy(rep, 0, res.sequence, indexInRes, rep.length);
+                beginIndex += tar.length - 1;
+                indexInRes += rep.length - 1;
+            }
+            indexInRes++;
+        }
+        return res;
     }
 
-    public CustomString replaceFirst(final CustomString target,
+    /*
+    //todo: functions with regex
+
+    public CustomString replaceFirst(final CustomString regex,
                                      final CustomString replacement) {
         return null;
     }
 
-    public CustomString replaceAll(final CustomString target,
+    public CustomString replaceAll(final CustomString regex,
                                    final CustomString replacement) {
         return null;
     }
 
-    public boolean matches(String regex) {
-        return false; //todo
+    public boolean matches(CustomString regex) {
+        return false;
     }
 
     public CustomString[] split(final CustomString regex) {
@@ -296,53 +317,81 @@ public class CustomString implements Comparable<CustomString> {
         return null;
     }
 
-    public CustomString trim() {
+    public static CustomString format(final CustomString format,
+                                      final Object... args) {
         return null;
+    }
+    */
+
+    public CustomString trim() {
+        int beginIndex = 0;
+        while (beginIndex < size && sequence[beginIndex] == ' ') {
+            beginIndex++;
+        }
+        int endIndex = size - 1;
+        while (endIndex >= 0 && sequence[endIndex] == ' ') {
+            endIndex--;
+        }
+        return substring(beginIndex, endIndex + 1);
     }
 
     public CustomString toLowerCase() {
-        return null;
+        CustomString res = new CustomString(this);
+        for (int index = 0; index < res.size; index++) {
+            res.sequence[index] = toLowerCase(res.sequence[index]);
+        }
+        return res;
+    }
+
+    private static char toLowerCase(final char c) {
+        return Character.toLowerCase(c);
+    }
+
+    private static char[] toLowerCase(final char[] data) {
+        char[] res = new char[data.length];
+        for (int index = 0; index < res.length; index++) {
+            res[index] = toLowerCase(res[index]);
+        }
+        return res;
     }
 
     public CustomString toUpperCase() {
-        return null;
+        CustomString res = new CustomString(this);
+        for (int index = 0; index < res.size; index++) {
+            res.sequence[index] = toUpperCase(res.sequence[index]);
+        }
+        return res;
+    }
+
+    private static char toUpperCase(final char c) {
+        return Character.toUpperCase(c);
     }
 
     @Override
     public String toString() {
-        return null;
+        return new String(toCharArray());
     }
 
     public char[] toCharArray() {
         return Arrays.copyOf(sequence, size);
     }
 
-    public static CustomString format(final CustomString format,
-                                      final Object... args) {
-        return null;
-    }
 
     public static CustomString copyValueOf(final char[] data,
                                            final int offset,
                                            final int count) {
-        return null;
+        char[] newData = new char[count];
+        System.arraycopy(data, offset, newData, 0, count);
+        return new CustomString(newData);
     }
 
     public static CustomString copyValueOf(char[] data) {
-        return null;
+        return new CustomString(data);
     }
 
     public static CustomString valueOf(char c) {
-        return null;
+        return new CustomString(c);
     }
-
-    /*
-
-    public static CustomString (char[] data) {
-
-    }
-
-     */
 
     private void checkIndex(final int index) {
         if (index < 0 || index >= size) {
